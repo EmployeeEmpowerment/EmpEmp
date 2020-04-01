@@ -1,0 +1,23 @@
+<head>
+  <title>Companies List</title>
+</head>
+<body>
+  <h1>Companies</h1>
+ 
+<table>
+  <tr>
+    <th>Company</th>
+    <th>CEO</th>
+    <th></th>
+  </tr>
+ 
+  <% @companies.each do |company| %>
+    <tr>
+      <td><%= company.name %></td>
+      <td><%= company.ceo %></td>
+      <td><%= link_to 'Show', company_path(company) %></td>
+    </tr>
+  <% end %>
+</table><br>
+<center><%= link_to 'Create company', new_company_path %></center>
+</body>

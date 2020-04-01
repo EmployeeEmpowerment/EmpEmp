@@ -1,0 +1,26 @@
+<head>
+  <title>New Company</title>
+</head>
+<body>
+  <h1>New Company</h1>
+  <%= form_with scope: :company, url: companies_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.label :ceo, 'CEO' %><br>
+    <%= form.text_field :ceo %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+  
+  <% end %>
+  
+  <p>
+    <%= link_to 'Back', companies_path %>
+  </p>
+</body>

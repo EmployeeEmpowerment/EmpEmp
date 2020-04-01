@@ -1,0 +1,15 @@
+<head>
+  <title><%= @company.name %></title>
+</head>
+<body>
+  <h1><%= @company.name %></h1>
+   
+  <p>
+    <strong>CEO:</strong>
+    <%= @company.ceo %>
+  </p>
+  
+  <p>
+    <%= link_to 'Back', companies_path %>
+  </p>
+</body>
