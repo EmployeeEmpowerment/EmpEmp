@@ -7,9 +7,39 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5e8a887b2f508400196196cf&product=inline-share-buttons" async="async"></script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0033FF" vlink="#0033AA" alink="#0033FF" topmargin="11" leftmargin="3" marginheight="11" marginwidth="3">
+<table width="100%" bgcolor="#E0F8E0" id=header>
+  <td align=center>
+    <a href=https://github.com/ForestJay/VoteSquared>Help Code</a>
+  </td>
+</table>
+
+<table width="100%" border=0 cellspacing=0 class="main_body">
+  <td width=5 bgcolor="#9F81F7" border=0>
+  </td>
+  <td border=0>
+    <% if flash[:notice] %>
+      <a href="#" onclick="document.self.style.display = 'none'">
+      <table align="center"><td style="background: pink;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;"><%= flash[:notice] %></td></table>
+      </a>
+    <% end %>
 
   <body>
     <%= yield %>
   </body>
+<table align="center" cellpadding=5>
+<tr>
+<td bgcolor="#E6E6E6">
+<p align="center"><font face="verdana">Copyright (C) 2020 The Employee Empowerment Team</font></p>
+<center>
+<div class="sharethis-inline-share-buttons"></div>
+</center>
+</td>
+</tr>
+</table>
+
+</body>
 </html>
