@@ -125,8 +125,8 @@ GEM
     omniauth (1.9.1)
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
-    omniauth-facebook (6.0.0)
-      omniauth-oauth2 (~> 1.2)
+    omniauth-linkedin-oauth2 (1.0.0)
+      omniauth-oauth2
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
@@ -240,7 +240,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
-  omniauth-facebook
+  omniauth-linkedin-oauth2
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.2)
   sass-rails (>= 6)
