@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  ceo: MyString
+  name: Affectiva
+  ceo: Rana El Kaliouby
 
 two:
-  name: MyString
-  ceo: MyString
+  name: Facebook
+  ceo: Mark Zuckerburg

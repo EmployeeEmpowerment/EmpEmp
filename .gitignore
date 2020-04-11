@@ -37,3 +37,6 @@ yarn-debug.log*
 
 # Ignore Eclipse
 .project
+
+# Ignore Files w/ Secret Tokens
+config/initializers/devise.rb
