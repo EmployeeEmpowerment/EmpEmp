@@ -1,0 +1,17 @@
+require: rubocop-rails
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+  - 'config/initializers/devise.rb'
+
+Lint/RaiseException:
+  Enabled: false
+Lint/StructNewOverride:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: false
