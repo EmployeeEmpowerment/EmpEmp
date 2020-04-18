@@ -9,7 +9,7 @@ Requirements:
 To get started with the app, first clone the repo and `cd` into the directory:
 
 ```
-$ git clone https://github.com/ForestJay/EmpEmp.git 
+$ git clone git@github.com:ForestJay/EmpEmp.git 
 $ cd EmpEmp
 ```
 
@@ -25,6 +25,12 @@ Install JavaScript dependencies:
 $ yarn install
 ```
 
+IMPORTANT: Replace the not-secret key in config/initializers/devise.rb with a key that is actually secret. If you use the key that is there your database will not be secure. To create a secret key to replace, copy and paste into the config.secret_key of devise.rb run:
+
+```
+$ rake secret
+```
+
 Next, migrate the database:
 
 ```
@@ -34,7 +40,7 @@ $ rails db:migrate
 Finally, run the test suite to verify that everything is working correctly:
 
 ```
-$ rails test
+$ rake
 ```
 
 If the test suite passes, you'll be ready to run the app in a local server:

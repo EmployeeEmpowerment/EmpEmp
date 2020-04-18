@@ -6,7 +6,6 @@ rvm:
 # Setup
   
 before_script:
- - cp config/initializers/devise.rb.dummy config/initializers/devise.rb
  - nvm install node
  - bundle exec rails webpacker:install
  - RAILS_ENV=test bundle exec rails webpacker:compile
