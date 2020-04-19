@@ -3,10 +3,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
-
-# Gems for Login:
+# Gems for User:
 gem 'devise'
+gem 'gravtastic'
 gem 'omniauth-linkedin-oauth2'
 
 # Gems for testing:

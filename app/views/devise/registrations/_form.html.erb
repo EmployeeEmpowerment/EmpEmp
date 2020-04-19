@@ -1,0 +1,42 @@
+<div class="field">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :private, 'Keep Profile Private?' %><br>
+  <%= f.check_box :private %>
+</div>
+<div class="field">
+  <%= f.label :gender %><br>
+  <%= f.select :gender, [['Prefer not to say','PN'], ['Female','F'], ['Male','M'], ['Genderqueer/Non-Binary/Third Gender','NB'], 
+  ['Other','O']] %>
+</div>
+<div class="field">
+  <%= f.label :race %><br>
+  <%= f.select :race, [['Prefer not to say','PN'], ['Indigenous','IP'], ['Hispanic/Latinx','LX'], ['South Asian','SA'], 
+  ['East Asian','EA'], ['Black','B'], ['Middle Eastern','ME'], ['Mixed','MX'], ['White','W']] %>
+</div>
+<div class="field">
+  <%= f.label :lgbtqia_plus, 'Identify as LQBTQIA+?' %><br>
+  <%= f.check_box :lgbtqia_plus %>
+</div>
+<div class="field">
+  <%= f.label :immigrant %><br>
+  <%= f.check_box :immigrant %>
+</div>
+<div class="field">
+  <%= f.label :expat %><br>
+  <%= f.check_box :expat %>
+</div>
+<div class="field">
+  <%= f.label :has_disability %><br>
+  <%= f.check_box :has_disability %>
+</div>
+<div class="field">
+  <%= f.label :veteran %><br>
+  <%= f.check_box :veteran %>
+</div>
+<div class="field">
+  <%= f.label :year_of_birth %><br>
+  <%= f.text_field :year_of_birth, size: 4, maxlength: 4 %>
+</div>
