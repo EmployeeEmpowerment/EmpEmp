@@ -13,7 +13,20 @@
 <body bgcolor="#FFFFFF" text="#000000" link="#0033FF" vlink="#0033AA" alink="#0033FF" topmargin="11" leftmargin="3" marginheight="11" marginwidth="3">
 <table width="100%" bgcolor="#E0F8E0" id=header>
   <td align=center>
-    <a href=https://github.com/ForestJay/VoteSquared>Help Code</a>
+    <a href=https://github.com/ForestJay/EmpEmp>Help Code</a>
+  </td>
+  <td align=right> 
+    <center>
+      <% if user_signed_in? %>
+        <table><tr>
+          <td><%= current_user.display.html_safe %></td>
+          <td>  
+            <%= link_to 'Edit profile', edit_user_registration_path %><br>
+            <%= link_to("Logout", destroy_user_session_path, :method => :delete) %><br>
+          </td>
+        </tr></table>
+      <% end %>
+    </center>
   </td>
 </table>
 
