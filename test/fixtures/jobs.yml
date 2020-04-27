@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+facebook_cashier:
+  company: companies(:facebook)
+  user: users(:one)
+  title: Cashier
+  pay_rate: 9.99
+  pay_period: Hourly
+  startdate: 2019-04-26
+  enddate: 2020-04-26
+
+affectiva_eng:
+  company: companies(:affectiva)
+  user: users(:two)
+  title: Software Engineer
+  pay_rate: 90500
+  pay_period: Yearly
+  startdate: 2020-04-26
+  enddate: 
