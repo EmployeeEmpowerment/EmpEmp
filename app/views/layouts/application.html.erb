@@ -21,7 +21,7 @@
         <table><tr>
           <td><%= current_user.display.html_safe %></td>
           <td>  
-            <%= link_to 'Edit profile', edit_user_registration_path %><br>
+            <%= link_to 'View profile', user_jobs_path(current_user.id) %><br>
             <%= link_to("Logout", destroy_user_session_path, :method => :delete) %><br>
           </td>
         </tr></table>

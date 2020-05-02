@@ -5,9 +5,7 @@ class User < ApplicationRecord
   include Gravtastic
   gravtastic size: 50
 
-  # rubocop:disable Rails/HasManyOrHasOneDependent
-  has_many :jobs
-  # rubocop:enable Rails/HasManyOrHasOneDependent
+  has_many :jobs, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
