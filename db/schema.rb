@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2020_04_27_200517) do
     t.string "title"
     t.decimal "pay_rate"
     t.string "pay_period"
-    t.date "startdate"
-    t.date "enddate"
+    t.date "start_date"
+    t.date "end_date"
     t.integer "company_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

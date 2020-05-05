@@ -7,8 +7,8 @@ class JobTest < ActiveSupport::TestCase
     job = Job.new
     job.company_id = companies(:affectiva).id
     job.user_id = users(:two).id
-    job.startdate = Time.zone.yesterday
-    job.enddate = Time.zone.today
+    job.start_date = Time.zone.yesterday
+    job.end_date = Time.zone.today
     job.pay_rate = '13.50'
     job.pay_period = 'H'
     assert_not job.save, 'Saved job without title!'
@@ -19,8 +19,8 @@ class JobTest < ActiveSupport::TestCase
     job.company_id = companies(:affectiva).id
     job.user_id = users(:two).id
     job.title = 'Chief Happiness Officer'
-    job.startdate = Time.zone.yesterday
-    job.enddate = Time.zone.today
+    job.start_date = Time.zone.yesterday
+    job.end_date = Time.zone.today
     job.pay_rate = '13.50'
     assert_not job.save, 'Saved job when paid without period!'
   end
@@ -30,22 +30,22 @@ class JobTest < ActiveSupport::TestCase
     job.company_id = companies(:affectiva).id
     job.user_id = users(:two).id
     job.title = 'Chief Happiness Officer'
-    job.startdate = Time.zone.yesterday
-    job.enddate = Time.zone.today
+    job.start_date = Time.zone.yesterday
+    job.end_date = Time.zone.today
     job.pay_rate = '13.50'
     job.pay_period = 'H'
     assert job.save, 'Failed to save job with valid info!'
   end
 
-  test 'should save without enddate' do
+  test 'should save without end date' do
     job = Job.new
     job.company_id = companies(:affectiva).id
     job.user_id = users(:two).id
     job.title = 'Chief Happiness Officer'
-    job.startdate = Time.zone.yesterday
+    job.start_date = Time.zone.yesterday
     job.pay_rate = '13.50'
     job.pay_period = 'H'
-    assert job.save, 'Failed to save job withput enddate!'
+    assert job.save, 'Failed to save job withput end date!'
   end
 
   test 'start date must come first' do
@@ -53,8 +53,8 @@ class JobTest < ActiveSupport::TestCase
     job.company_id = companies(:affectiva).id
     job.user_id = users(:two).id
     job.title = 'Chief Happiness Officer'
-    job.startdate = Time.zone.today
-    job.enddate = Time.zone.yesterday
+    job.start_date = Time.zone.today
+    job.end_date = Time.zone.yesterday
     job.pay_rate = '13.50'
     job.pay_period = 'H'
     assert_not job.save, 'Saved job when start date is after end date!'

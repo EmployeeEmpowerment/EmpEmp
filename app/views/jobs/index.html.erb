@@ -3,24 +3,31 @@
     <h1><%= @user.name %>'s Profile</h1>
     <%= @user.display.html_safe %><br>
     <%= link_to 'Edit profile', edit_user_registration_path %><br>
-    <% if @jobs.count > 0 %>
+    <% if @jobs.any? %>
+      <p>
       <table>
         <tr>
           <th>Company</th>
-          <th>CEO</th>
-          <th></th>
+          <th>Title</th>
+          <th>Pay Rate</th>
+          <th>Start Date</th>
         </tr>
         <% @jobs.each do |job| %>
           <tr>
-            <td><%= job.company %></td>
+            <td><%= job.company.name %></td>
+            <td><%= job.pay_rate %></td>
             <td><%= job.title %></td>
-            <td><%= job.startdate %></td>
-            <td><%= link_to 'Edit', edit_user_jobs_path(job) %></td>
+            <td><%= job.start_date %></td>
+            <td><%= link_to 'Edit', edit_user_job_path(current_user.id, job.id) %></td>
+            <td><%= link_to 'Delete', user_job_path(current_user.id, job.id),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </table><br>
       <% end %>
     
+    <p><%= link_to 'New job', new_user_job_path %></p>
   </center>
   
   

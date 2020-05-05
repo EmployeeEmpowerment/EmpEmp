@@ -7,8 +7,8 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.string :title
       t.decimal :pay_rate
       t.string :pay_period
-      t.date :startdate
-      t.date :enddate
+      t.date :start_date
+      t.date :end_date
       t.references :company, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
 

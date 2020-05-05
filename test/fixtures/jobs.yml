@@ -6,8 +6,8 @@ facebook_cashier:
   title: Cashier
   pay_rate: 9.99
   pay_period: Hourly
-  startdate: 2019-04-26
-  enddate: 2020-04-26
+  start_date: 2019-04-26
+  end_date: 2020-04-26
 
 affectiva_eng:
   company: companies(:affectiva)
@@ -15,5 +15,5 @@ affectiva_eng:
   title: Software Engineer
   pay_rate: 90500
   pay_period: Yearly
-  startdate: 2020-04-26
-  enddate: 
+  start_date: 2020-04-26
+  end_date: 
