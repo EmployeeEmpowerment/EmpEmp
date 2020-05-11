@@ -1,39 +1,7 @@
 <h1>Edit Job</h1>
-<%= form_with model: @job, url: user_job_path(current_user.id), method: "patch", local: true do |form| %>
-  <p>
-    <%= form.label :company %>
-    <%= form.collection_select(:company_id, Company.all, :id, :name) %>
-  </p>
-  
-  <p>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </p>
-  
-  <p>
-    <%= form.label :pay_period %> 
-    <%= form.select :pay_period, [['Annual', 'A'], ['Hourly', 'H']] %>
-  </p>
-  
-  <p>
-    <%= form.label :pay_rate %>
-    <%= form.number_field :pay_rate %>
-  </p>
-  
-  <p>
-    <%= form.label :start_date %>
-    <%= form.date_field :start_date %>
-  </p>
 
-  <p>
-    <%= form.label :end_date %>
-    <%= form.date_field :end_date %>
-  </p>
-  
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'form', job: @job %>
+
 <p>
-  <%= link_to 'Back', user_jobs_path(current_user.id) %>
+  <%= link_to 'Back', jobs_path %>
 </p>
