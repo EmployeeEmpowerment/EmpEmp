@@ -1,0 +1,35 @@
+PN:
+  name: Prefer not to say
+  abbreviation: PN
+   
+IP:
+  name: Indigenous
+  abbreviation: IP
+
+LX:
+  name: Hispanic/Latinx
+  abbreviation: LX
+  
+SA:
+  name: South Asian
+  abbreviation: SA
+  
+EA:
+  name: East Asian
+  abbreviation: EA
+  
+B:
+  name: Black
+  abbreviation: B
+
+ME:
+  name: Middle Eastern
+  abbreviation: ME
+
+MX:
+  name: Mixed
+  abbreviation: MX
+
+W:
+  name: White
+  abbreviation: W
