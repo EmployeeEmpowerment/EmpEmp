@@ -12,7 +12,10 @@
     <tr>
       <td><%= company.name %></td>
       <td><%= company.ceo %></td>
-      <td><%= link_to 'Show', company_path(company) %></td>
+      <td>
+        <%= link_to 'Show', company_path(company) %>
+        <%= link_to 'Edit', edit_company_path(company.id) %>
+      </td>
     </tr>
   <% end %>
 </table><br>
