@@ -14,7 +14,7 @@
       </tr>
       <% @user.jobs.order(start_date: :desc).each do |job| %>
         <tr>
-          <td><%= job.company.name %></td>
+          <td><%= link_to job.company.name, company_path(job.company) %></td>
           <td align='right'><%= number_to_currency(job.pay_rate, precision: job.pay_period == 'H' ? 2 : 0) %></td>
           <td><%= job.title %></td>
           <td><%= job.start_date %></td>
