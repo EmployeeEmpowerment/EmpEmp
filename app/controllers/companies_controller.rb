@@ -2,7 +2,7 @@
 
 # Controller for Companies
 class CompaniesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: %i[new create]
 
   def index
     @companies = Company.all
@@ -29,6 +29,6 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:name, :ceo)
+    params.require(:company).permit(:name, :ceo, :company_id, :start_date, :end_date)
   end
 end

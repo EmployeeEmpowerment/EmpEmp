@@ -6,5 +6,8 @@ Rails.application.routes.draw do
 
   resources :companies
 
+  resources :users
+  resources :jobs
+
   root 'welcome#index'
 end

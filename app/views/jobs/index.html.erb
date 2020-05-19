@@ -1,0 +1,31 @@
+<% @user = current_user %>
+<center>
+  <h1><%= @user.name %>'s Profile</h1>
+  <%= @user.display.html_safe %><br>
+  <%= link_to 'Edit profile', edit_user_registration_path %><br>
+  <% if @user.jobs.any? %>
+    <p>
+    <table>
+      <tr>
+        <th>Company</th>
+        <th>Title</th>
+        <th>Pay Rate</th>
+        <th>Start Date</th>
+      </tr>
+      <% @user.jobs.order(start_date: :desc).each do |job| %>
+        <tr>
+          <td><%= job.company.name %></td>
+          <td align='right'><%= number_to_currency(job.pay_rate, precision: job.pay_period == 'H' ? 2 : 0) %></td>
+          <td><%= job.title %></td>
+          <td><%= job.start_date %></td>
+          <td><%= link_to 'Edit', edit_job_path(job.id) %></td>
+          <td><%= link_to 'Delete', job_path(job.id),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </table><br>
+    <% end %>
+  
+  <p><%= link_to 'New job', new_job_path %></p>
+</center>

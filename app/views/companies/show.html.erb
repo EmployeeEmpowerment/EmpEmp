@@ -5,6 +5,47 @@
   <%= @company.ceo %>
 </p>
 
+<% if @company.jobs.any? %>
+<h2>Jobs</h2>
+<table border="1" cellpadding="8" cellspacing="2">
+  <tr>
+    <th>Title</th>
+    <th>Pay</th>
+    <th>Gender</th>
+    <th>Race</th>
+    <th>LGBTQIA+?</th>
+    <th>Immigrant</th>
+    <th>Expat</th>
+    <th>Disability</th>
+    <th>Veteran</th>
+    <th>Year of Birth</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Last Update</th>
+  </tr>
+ 
+  <% @company.jobs.each do |job| %>
+    <% unless job.user.private %>
+      <tr>
+        <td><%= job.title %></td>
+        <td align='right'><%= number_to_currency(job.pay_rate, precision: job.pay_period == 'H' ? 2 : 0) %></td>
+        <td><%= GENDERS[job.user.gender]['name'] %></td>
+        <td><%= RACES[job.user.race]['name'] %></td>
+        <td><%= job.user.lgbtqia_plus ? 'Yes' : 'No' %></td>
+        <td><%= job.user.immigrant ? 'Yes' : 'No' %></td>
+        <td><%= job.user.expat ? 'Yes' : 'No' %></td>
+        <td><%= job.user.has_disability ? 'Yes' : 'No' %></td>
+        <td><%= job.user.veteran ? 'Yes' : 'No' %></td>
+        <td><%= job.user.year_of_birth %></td>
+        <td><%= job.start_date %></td>
+        <td><%= job.end_date %></td>
+        <td><%= job.updated_at.to_date %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table><br>
+<% end %>
+
 <p>
   <%= link_to 'Back', companies_path %>
 </p>

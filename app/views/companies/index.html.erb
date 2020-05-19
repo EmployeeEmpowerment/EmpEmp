@@ -1,5 +1,6 @@
 <h1>Companies</h1>
- 
+
+<% if @companies.any? %>
 <table>
   <tr>
     <th>Company</th>
@@ -15,4 +16,6 @@
     </tr>
   <% end %>
 </table><br>
+<% end %>
+
 <center><%= link_to 'Create company', new_company_path %></center>

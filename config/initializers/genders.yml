@@ -1,0 +1,15 @@
+PN:
+  name: Prefer not to say
+  abbreviation: PN
+
+F:
+  name: Female
+  abbreviation: F
+  
+M:
+  name: Male
+  abbreviation: M
+  
+NB:
+  name: Genderqueer/Non-Binary/Third Gender
+  abbreviation: NB
