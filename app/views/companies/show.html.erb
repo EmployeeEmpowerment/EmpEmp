@@ -2,7 +2,7 @@
  
 <p>
   <strong>CEO:</strong>
-  <%= @company.ceo %>
+  <%= @company.ceo %> (<%= GENDERS[@company.ceo_gender]['name'] %> - <%= RACES[@company.ceo_race]['name'] %>)
 </p>
 
 <% if @company.jobs.any? %>
