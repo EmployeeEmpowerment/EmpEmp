@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="Author" content="The Employee Empowerment Team">
+    <meta name="Classification" content="Pay Gap, Equity, Employee Empowerment">
+    <meta name=Copyright content="&copy; 2020 The Employee Empowerment Team">
+    <meta name="KeyWords" content="Pay Gap, Equity, Employee Empowerment">
     <title>EmpEmp</title>
     <%= csrf_meta_tags %>
+    <script type="application/ld+json" src="/assets/search_micro_data.json"></script>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,24 +18,36 @@
 
 <body bgcolor="#FFFFFF" text="#000000" link="#0033FF" vlink="#0033AA" alink="#0033FF" topmargin="11" leftmargin="3" marginheight="11" marginwidth="3">
 <table width="100%" bgcolor="#E0F8E0" id=header>
-  <td align=center>
-    <a href=https://github.com/ForestJay/EmpEmp>Help Code</a>
-  </td>
-  <td align=right> 
-    <center>
-      <% if user_signed_in? %>
-        <table><tr>
-          <td><%= current_user.display.html_safe %></td>
-          <td>  
-            <%= link_to 'View profile', jobs_path %><br>
-            <%= link_to("Logout", destroy_user_session_path, :method => :delete) %><br>
-          </td>
-        </tr></table>
-      <% else %>
-        <%= link_to("Login", new_user_session_url) %>
-      <% end %>
-    </center>
-  </td>
+  <tr>
+    <td>
+      <center><a href="/"><img src="/LogoSmall.png" width="218" height="60" alt="Employee Empowerment - Rockclimber by Raftrek Adventure Travel"></a></center>
+    </td>
+ 
+    <td>
+      <center>
+        Follow us on<br>
+        <a href="https://www.linkedin.com/company/empemp/"><img src="/li-logo.png" alt="LinkedIn"></a> <a href="https://www.facebook.com/EmployeeEmp/"><img src="/fb-logo.png" alt="Facebook"></a>
+      </center>
+    </td>  
+   <td align=center>
+     <a href=https://github.com/ForestJay/EmpEmp>Help Code</a>
+   </td>
+   <td align=right> 
+     <center>
+       <% if user_signed_in? %>
+         <table><tr>
+           <td><%= current_user.display.html_safe %></td>
+           <td>  
+             <%= link_to 'View profile', jobs_path %><br>
+             <%= link_to("Logout", destroy_user_session_path, :method => :delete) %><br>
+           </td>
+         </tr></table>
+       <% else %>
+         <%= link_to("Login", new_user_session_url) %>
+       <% end %>
+     </center>
+   </td>
+  </tr>
 </table>
 
 <table width="100%" border=0 cellspacing=0 class="main_body">

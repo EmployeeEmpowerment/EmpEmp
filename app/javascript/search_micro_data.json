@@ -1,0 +1,10 @@
+{
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name" : "Employee Empowerment",
+    "url": "http://EmpEmp.org/",
+    "logo": "http://EmpEmp.org/Logo.png",
+    "sameAs" : [ "https://www.linkedin.com/company/empemp/",
+    	"https://www.facebook.com/EmployeeEmp/",
+    	"https://github.com/ForestJay/EmpEmp/"]
+}
