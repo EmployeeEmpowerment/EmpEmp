@@ -10,6 +10,18 @@
   </p>
   
   <p>
+    <%= form.label :ceo_gender, "CEO's Gender" %><br>
+    <% genders_array = GENDERS.flatten.map { |gender| [gender['name'], gender['abbreviation']] if gender['name'] }.compact %>
+    <%= form.select :ceo_gender, genders_array %>
+  </p>
+  
+  <p>
+    <%= form.label :ceo_race, "CEO's Race" %><br>
+    <% races_array = RACES.flatten.map { |race| [race['name'], race['abbreviation']] if race['name'] }.compact %>
+    <%= form.select :ceo_race, races_array %>
+  </p>
+  
+  <p>
     <%= form.submit %>
   </p>
 

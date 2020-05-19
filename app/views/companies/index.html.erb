@@ -1,10 +1,10 @@
-<h1>Companies</h1>
+<h1 align='center'>Companies</h1>
 
 <% if @companies.any? %>
-<table>
+<table cellpadding="3" cellspacing="2" align='center'>
   <tr>
     <th>Company</th>
-    <th>CEO</th>
+    <th colspan=3>CEO</th>
     <th></th>
   </tr>
  
@@ -12,6 +12,8 @@
     <tr>
       <td><%= company.name %></td>
       <td><%= company.ceo %></td>
+      <td align=center><%= GENDERS[company.ceo_gender]['name'] %></td>
+      <td align=center><%= RACES[company.ceo_race]['name'] %></td>
       <td>
         <%= link_to 'Show', company_path(company) %>
         <%= link_to 'Edit', edit_company_path(company.id) %>
