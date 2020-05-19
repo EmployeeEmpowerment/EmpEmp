@@ -5,6 +5,7 @@ class Company < ApplicationRecord
   # rubocop:disable Rails/HasManyOrHasOneDependent
   has_many :jobs
   # rubocop:enable Rails/HasManyOrHasOneDependent
+  has_many :executives, dependent: :destroy
 
   validates :name, presence: true, length: { minimum: 3 }
   validates :ceo, length: { minimum: 4 }

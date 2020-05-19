@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Sheryl Sandberg
+  title: Chief Operating Officer
+  gender: F
+  race: W
+  startdate: 
+  company: companies(:facebook)
+
+two:
+  name: Dave Wehner
+  title: Chief Financial Officer 
+  gender: M
+  race: W
+  startdate: 2001-01-01
+  company: companies(:facebook)
