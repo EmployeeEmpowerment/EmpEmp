@@ -5,7 +5,7 @@ one:
   title: Chief Operating Officer
   gender: F
   race: W
-  startdate: 
+  start_date: 
   company: companies(:facebook)
 
 two:
@@ -13,5 +13,5 @@ two:
   title: Chief Financial Officer 
   gender: M
   race: W
-  startdate: 2001-01-01
+  start_date: 2001-01-01
   company: companies(:facebook)

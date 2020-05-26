@@ -1,9 +1,22 @@
-<h1><%= @company.name %></h1>
- 
-<p>
+<center>
+  <h1><%= @company.name %></h1>
+  <%= @company.exec_diverse_score_html %><br>
   <strong>CEO:</strong>
-  <%= @company.ceo %> (<%= GENDERS[@company.ceo_gender]['name'] %> - <%= RACES[@company.ceo_race]['name'] %>)
-</p>
+  <%= @company.ceo %> (<%= GENDERS[@company.ceo_gender]['name'] %> - <%= RACES[@company.ceo_race]['name'] %>) 
+  <%= link_to 'Edit', edit_company_path(@company.id) %><br>
+  
+  <% @company.executives.each do |exec| %>
+    <strong><%= exec.title %>:</strong>
+    <%= exec.name %> (<%= GENDERS[exec.gender]['name'] %> - <%= RACES[exec.race]['name'] %>) 
+    <%= link_to 'Edit', edit_company_executive_path(@company.id, exec.id) %> 
+    <%= link_to 'Delete', [@company, exec],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+    <br>
+  <% end %>
+  
+  <%= link_to 'Add Executive', new_company_executive_path(@company.id) %>
+</center>
 
 <% if @company.jobs.any? %>
 <h2>Jobs</h2>
