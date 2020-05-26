@@ -8,7 +8,7 @@ class CreateExecutives < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :gender
       t.string :race
-      t.date :startdate
+      t.date :start_date
       t.references :company, null: false, foreign_key: true
 
       t.timestamps

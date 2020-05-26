@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
-  resources :companies
+  resources :companies do
+    resources :executives
+  end
 
   resources :users
   resources :jobs

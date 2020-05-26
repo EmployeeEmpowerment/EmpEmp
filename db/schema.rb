@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_191638) do
     t.string "title"
     t.string "gender"
     t.string "race"
-    t.date "startdate"
+    t.date "start_date"
     t.integer "company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
