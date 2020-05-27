@@ -5,6 +5,10 @@ Layout/LineLength:
   Exclude:
   - 'config/initializers/devise.rb'
 
+Metrics/MethodLength:
+  Exclude:
+  - 'db/migrate/20200419192716_add_user_info_to_users.rb'
+
 Lint/RaiseException:
   Enabled: true
 Lint/StructNewOverride:
