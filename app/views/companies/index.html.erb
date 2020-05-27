@@ -10,7 +10,7 @@
  
   <% @companies.each do |company| %>
     <tr>
-      <td><%= company.name %></td>
+      <td><%= company.name %> <%= company.exec_diverse_score_html(25) %></td>
       <td><%= company.ceo %></td>
       <td align=center><%= GENDERS[company.ceo_gender]['name'] %></td>
       <td align=center><%= RACES[company.ceo_race]['name'] %></td>
