@@ -9,7 +9,7 @@ Requirements:
 To get started with the app, first clone the repo and `cd` into the directory:
 
 ```
-$ git clone git@github.com:ForestJay/EmpEmp.git 
+$ git clone git@github.com:EmployeeEmpowerment/EmpEmp.git
 $ cd EmpEmp
 ```
 

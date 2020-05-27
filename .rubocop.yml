@@ -6,12 +6,22 @@ Layout/LineLength:
   - 'config/initializers/devise.rb'
 
 Lint/RaiseException:
-  Enabled: false
+  Enabled: true
 Lint/StructNewOverride:
-  Enabled: false
+  Enabled: true
 Style/HashEachMethods:
-  Enabled: false
+  Enabled: true
 Style/HashTransformKeys:
-  Enabled: false
+  Enabled: true
 Style/HashTransformValues:
-  Enabled: false
+  Enabled: true
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Style/ExponentialNotation:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true
