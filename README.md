@@ -1,5 +1,5 @@
 # Employee Empowerment SaaS App
-[![Build Status](https://travis-ci.org/ForestJay/EmpEmp.svg?branch=master)](https://travis-ci.org/ForestJay/EmpEmp)
+[![Build Status](https://travis-ci.org/EmployeeEmpowerment/EmpEmp.svg?branch=master)](https://travis-ci.org/EmployeeEmpowerment/EmpEmp)
 
 Requirements:
 * Ruby version 2.5.1p57+
