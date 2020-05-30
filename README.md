@@ -25,7 +25,7 @@ Install JavaScript dependencies:
 $ yarn install
 ```
 
-IMPORTANT: Replace the not-secret key in config/initializers/devise.rb with a key that is actually secret. If you use the key that is there your database will not be secure. To create a secret key to replace, copy and paste into the config.secret_key of devise.rb run:
+*IMPORTANT* Replace the not-secret key in config/initializers/devise.rb with a key that is actually secret. If you use the key that is there your database will not be secure. To create a secret key to replace, copy and paste into the config.secret_key of devise.rb run:
 
 ```
 $ rake secret
