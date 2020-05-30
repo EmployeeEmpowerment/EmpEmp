@@ -13,7 +13,7 @@ $ git clone git@github.com:EmployeeEmpowerment/EmpEmp.git
 $ cd EmpEmp
 ```
 
-Then install the needed gems (while skipping any gems needed only in production):
+Install the needed gems (while skipping any gems needed only in production):
 
 ```
 $ bundle install --without production
