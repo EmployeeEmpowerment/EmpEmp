@@ -3,7 +3,9 @@
 # Migration to add demographics for the CEO
 class AddCeoDemographicsToCompany < ActiveRecord::Migration[6.0]
   def change
-    add_column :companies, :ceo_gender, :string
-    add_column :companies, :ceo_race, :string
+    change_table :companies, bulk: true do |t|
+      t.string :ceo_gender
+      t.string :ceo_race
+    end
   end
 end

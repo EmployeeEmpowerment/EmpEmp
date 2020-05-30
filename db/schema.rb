@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_05_19_191638) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "ceo"
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_191638) do
     t.string "gender"
     t.string "race"
     t.date "start_date"
-    t.integer "company_id", null: false
+    t.bigint "company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_executives_on_company_id"
@@ -39,8 +42,8 @@ ActiveRecord::Schema.define(version: 2020_05_19_191638) do
     t.string "pay_period"
     t.date "start_date"
     t.date "end_date"
-    t.integer "company_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "company_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_jobs_on_company_id"
