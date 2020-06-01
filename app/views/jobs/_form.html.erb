@@ -15,7 +15,7 @@
   </p>
   
   <p>
-    <%= form.label :pay_rate %>
+    <%= form.label 'Current Pay Rate' %>
     <%= form.number_field :pay_rate, value: number_to_currency(form.object.pay_rate.to_f, delimiter: '', unit: ''), step: :any %>
   </p>
   
