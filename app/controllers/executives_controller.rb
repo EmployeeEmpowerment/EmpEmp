@@ -2,6 +2,8 @@
 
 # Controller for Executives
 class ExecutivesController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create destroy edit]
+
   # File after submission in new.html.erb
   def create
     @company = Company.find(params[:company_id])
@@ -9,6 +11,7 @@ class ExecutivesController < ApplicationController
     redirect_to company_path(@company)
   end
 
+  # File after clicking delete from companies/show.html.erb
   def destroy
     @company = Company.find(params[:id])
     @executive = Executive.find(params[:id])
