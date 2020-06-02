@@ -28,10 +28,11 @@ $ yarn install
 Install Postgres:
 * This is a rather tedious process and very operating system dependent. I recommend using [this guide](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup). Alternatively, you can revert the changes from Issue #16 to return to SQLite in your personal fork. Good luck!
 
-*IMPORTANT* Replace the not-secret key in config/initializers/devise.rb with a key that is actually secret. If you use the key that is there your database will not be secure. To create a secret key to replace, copy and paste into the config.secret_key of devise.rb run:
+Setup Devise:
+You need to set the DEVISE environment variables. Here is a way to do it prior to running rake or launching the server. It's better to use a more permanent method like secrets.yml.
 
 ```
-$ rake secret
+$ export DEVISE_SECRET=$(rake secret)
 ```
 
 Next, migrate the database:

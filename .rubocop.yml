@@ -9,6 +9,9 @@ Metrics/MethodLength:
   Exclude:
   - 'db/migrate/20200419192716_add_user_info_to_users.rb'
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+  
 Lint/RaiseException:
   Enabled: true
 Lint/StructNewOverride:
