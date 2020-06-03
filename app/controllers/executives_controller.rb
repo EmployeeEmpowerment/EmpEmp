@@ -13,7 +13,7 @@ class ExecutivesController < ApplicationController
 
   # File after clicking delete from companies/show.html.erb
   def destroy
-    @company = Company.find(params[:id])
+    @company = Company.find(params[:company_id])
     @executive = Executive.find(params[:id])
     @executive.destroy
     redirect_to company_path(@company)
