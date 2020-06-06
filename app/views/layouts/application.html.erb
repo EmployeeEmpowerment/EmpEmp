@@ -51,7 +51,7 @@
 </table>
 
 <table width="100%" border=0 cellspacing=0 class="main_body">
-  <td width=5 bgcolor="#9F81F7" border=0>
+  <td width=5 border=0>
   </td>
   <td border=0>
     <% if flash[:notice] %>
@@ -61,7 +61,9 @@
     <% end %>
 
   <body>
-    <%= yield %>
+    <center>
+      <%= yield %>
+    </center>
   </body>
 <table align="center" cellpadding=5>
 <tr>

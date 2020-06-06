@@ -1,5 +1,5 @@
-<h1 align='center'>Add Executive to <%= link_to @company.name, company_path(@company.id) %></h1>
+<h1>Add Executive to <%= link_to @company.name, company_path(@company.id) %></h1>
 
 <%= render 'form', company: @company, executive: @executive %>
 
-<p align='center'><%= link_to 'Back', company_path(@company.id) %></p>
+<p><%= link_to 'Back', company_path(@company.id) %></p>
