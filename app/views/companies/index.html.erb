@@ -5,19 +5,14 @@
   <tr>
     <th>Company</th>
     <th colspan=3>CEO</th>
-    <th></th>
   </tr>
  
   <% @companies.each do |company| %>
     <tr>
-      <td><%= company.name %> <%= company.exec_diverse_score_html(25) %></td>
+      <td><%= link_to company.name, company_path(company) %> <%= company.exec_diverse_score_html(25) %></td>
       <td><%= company.ceo %></td>
       <td align=center><%= GENDERS[company.ceo_gender]['name'] %></td>
       <td align=center><%= RACES[company.ceo_race]['name'] %></td>
-      <td>
-        <%= link_to 'Show', company_path(company) %>
-        <%= link_to 'Edit', edit_company_path(company.id) %>
-      </td>
     </tr>
   <% end %>
 </table><br>
