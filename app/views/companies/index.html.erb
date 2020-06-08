@@ -1,13 +1,61 @@
 <h1>Companies</h1>
 
+<script>
+function sortTable(column) {
+  var table = document.getElementById('Companies');
+  var switching = true;
+  var dir = 'asc';
+  var switchCount = 0;
+  var rows, i, x, y, shouldSwitch;
+  
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+  
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName('TD')[column];
+      y = rows[i + 1].getElementsByTagName('TD')[column];
+      
+      if (dir == 'asc') {
+        if (x.innerText.toLowerCase() > y.innerText.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+      else if (dir == 'desc') {
+        if (x.innerText.toLowerCase() < y.innerText.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      switchCount ++;
+    }
+    else {
+      if (switchCount == 0 && dir == 'asc') {
+        dir = 'desc';
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+
 <% if @companies.any? %>
-<table cellpadding="3" cellspacing="2">
+<table cellpadding=3 cellspacing=2 id='Companies'>
   <tr>
-    <th>Company</th>
-    <th colspan=3>CEO</th>
+    <th onclick='sortTable(0)' style='cursor:pointer'>Company</th>
+    <th onclick='sortTable(1)' style='cursor:pointer'>CEO: Name</th>
+    <th onclick='sortTable(2)' style='cursor:pointer'>Gender</th>
+    <th onclick='sortTable(3)' style='cursor:pointer'>Race</th>
   </tr>
  
-  <% @companies.each do |company| %>
+  <% @companies.sort_by(&:name).each do |company| %>
     <tr>
       <td><%= link_to company.name, company_path(company) %> <%= company.exec_diverse_score_html(25) %></td>
       <td><%= company.ceo %></td>
