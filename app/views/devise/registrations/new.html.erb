@@ -4,20 +4,20 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %><br>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
   
@@ -27,49 +27,49 @@
   </div>
   
   <div class="field">
-    <%= f.label :private, 'Keep Profile Private?' %><br>
+    <%= f.label :private, 'Keep Profile Private?' %>
     <%= f.check_box :private %>
   </div>
   
   <div class="field">
-    <%= f.label :gender %><br>
+    <%= f.label :gender %>
     <% genders_array = GENDERS.flatten.map { |gender| [gender['name'], gender['abbreviation']] if gender['name'] }.compact %>
     <%= f.select :gender, genders_array %>
   </div>
   
   <div class="field">
-    <%= f.label :race %><br>
+    <%= f.label :race %>
     <% races_array = RACES.flatten.map { |race| [race['name'], race['abbreviation']] if race['name'] }.compact %>
     <%= f.select :race, races_array %>
   </div>
   
   <div class="field">
-    <%= f.label :lgbtqia_plus, 'Identify as LQBTQIA+?' %><br>
+    <%= f.label :lgbtqia_plus, 'Identify as LQBTQIA+?' %>
     <%= f.check_box :lgbtqia_plus %>
   </div>
   
   <div class="field">
-    <%= f.label :immigrant %><br>
+    <%= f.label :immigrant %>
     <%= f.check_box :immigrant %>
   </div>
   
   <div class="field">
-    <%= f.label :expat %><br>
+    <%= f.label :expat %>
     <%= f.check_box :expat %>
   </div>
   
   <div class="field">
-    <%= f.label :has_disability %><br>
+    <%= f.label :has_disability %>
     <%= f.check_box :has_disability %>
   </div>
   
   <div class="field">
-    <%= f.label :veteran %><br>
+    <%= f.label :veteran %>
     <%= f.check_box :veteran %>
   </div>
   
   <div class="field">
-    <%= f.label :year_of_birth %><br>
+    <%= f.label :year_of_birth %>
     <%= f.text_field :year_of_birth, size: 4, maxlength: 4 %>
   </div>
 
@@ -77,7 +77,5 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= link_to "Sign in with LinkedIn", user_linkedin_omniauth_authorize_path %><br>
 
 <%= render "devise/shared/links" %>

@@ -9,7 +9,7 @@ gem 'gravtastic'
 gem 'omniauth-linkedin-oauth2'
 
 # Gems for testing:
-gem 'rubocop-rails', require: false
+gem 'rubocop-rails', '~> 2.5.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
