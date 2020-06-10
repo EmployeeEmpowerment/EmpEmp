@@ -1,14 +1,25 @@
 require: rubocop-rails
 
+Metrics/AbcSize:
+  Max: 20
+
 Layout/LineLength:
   Max: 120
   Exclude:
   - 'config/initializers/devise.rb'
 
+Metrics/BlockLength:
+  Exclude:
+  - 'db/schema.rb'
+
 Metrics/MethodLength:
+  Max: 15
   Exclude:
   - 'db/migrate/20200419192716_add_user_info_to_users.rb'
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+  
 Lint/RaiseException:
   Enabled: true
 Lint/StructNewOverride:
@@ -29,3 +40,10 @@ Style/ExponentialNotation:
   Enabled: true
 Style/SlicingWithRange:
   Enabled: true
+
+AllCops:
+  Exclude:
+    - 'node_modules/**/*'
+    - 'bin/**/*'
+    - 'app/controllers/devise/registrations_controller.rb'
+    - 'vendor/**/*'

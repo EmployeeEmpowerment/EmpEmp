@@ -1,7 +1,21 @@
 <% @user = current_user %>
 <h1><%= @user.name %>'s Profile</h1>
 <%= @user.display.html_safe %><br>
-<%= link_to 'Edit profile', edit_user_registration_path %><br>
+<% unless @user.gender.nil? %>
+  <p><b>Gender:</b> <%= GENDERS[@user.gender]['name'] %>,
+<% end %>
+<% unless @user.race.nil? %>
+  <b>Race/Ethnicity:</b> <%= RACES[@user.race]['name'] %>,
+<% end %>
+<b>LGBTQIA+:</b> <%= @user.lgbtqia_plus ? 'Yes' : 'No' %>,
+<b>Immigrant:</b> <%= @user.immigrant ? 'Yes' : 'No' %><br>
+<b>Expat:</b> <%= @user.expat ? 'Yes' : 'No' %>,
+<b>Have Disability:</b> <%= @user.has_disability ? 'Yes' : 'No' %>,
+<b>Veteran:</b> <%= @user.veteran ? 'Yes' : 'No' %>,
+<% unless @user.year_of_birth.nil? %>
+  <b>Birth Year:</b> <%= @user.year_of_birth %><br>
+<% end %>
+<p><%= link_to 'Edit profile', edit_user_registration_path %><br>
 <% if @user.jobs.any? %>
   <p>
   <table>
