@@ -1,4 +1,4 @@
-# Employee Empowerment SaaS App [EmpEmp.org](EmpEmp.org)
+# Employee Empowerment SaaS App ( [EmpEmp.org](https://EmpEmp.org) )
 [![Build Status](https://travis-ci.org/EmployeeEmpowerment/EmpEmp.svg?branch=master)](https://travis-ci.org/EmployeeEmpowerment/EmpEmp)
 
 Requirements:
