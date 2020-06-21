@@ -1,5 +1,5 @@
 <% @user = current_user %>
-<h1><%= @user.name %>'s Profile</h1>
+<% content_for :title, "#{@user.name}'s Profile" %>
 <%= @user.display.html_safe %><br>
 <% unless @user.gender.nil? %>
   <p><b>Gender:</b> <%= GENDERS[@user.gender]['name'] %>,
