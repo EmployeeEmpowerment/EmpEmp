@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def title(text)
+    content_for :title, text
+  end
+
   def configure_permitted_parameters
     sanitize_params(:sign_up)
     sanitize_params(:account_update)

@@ -6,7 +6,10 @@
     <meta name="Classification" content="Pay Gap, Equity, Employee Empowerment">
     <meta name=Copyright content="&copy; 2020 The Employee Empowerment Team">
     <meta name="KeyWords" content="Pay Gap, Equity, Employee Empowerment">
-    <title>EmpEmp</title>
+    <title>
+      <%= if content_for?(:title) then yield(:title) + ' | ' end %>
+      Employee Empowerment
+    </title>
     <%= csrf_meta_tags %>
     <script type="application/ld+json" src="/assets/search_micro_data.json"></script>
     <%= csp_meta_tag %>
@@ -60,11 +63,10 @@
       </a>
     <% end %>
 
-  <body>
     <center>
+      <h1><%= yield(:title) %></h1>
       <%= yield %>
     </center>
-  </body>
 <table align="center" cellpadding=5>
 <tr>
 <td bgcolor="#E6E6E6">

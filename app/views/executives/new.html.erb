@@ -1,4 +1,4 @@
-<h1>Add Executive to <%= link_to @company.name, company_path(@company.id) %></h1>
+<% content_for :title, "Add Executive to #{@company.name}" %>
 
 <%= render 'form', company: @company, executive: @executive %>
 
