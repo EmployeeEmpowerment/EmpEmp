@@ -15,7 +15,7 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Max: 15
   Exclude:
-  - 'db/migrate/20200419192716_add_user_info_to_users.rb'
+  - 'db/migrate/*'
 
 Style/ClassAndModuleChildren:
   Enabled: false

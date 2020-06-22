@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+facebook_rating:
+  user: users(:one)
+  company: companies(:facebook)
+  title: I hate this job
+  value: 1
+  pros: Everybody knows of my company.
+  cons: We're a monopoly.
+  discriminated: true
+  discriminated_by_management: false
+  harassed: true
+  harassed_by_management: false
+  housework_required: true
+  included: false
+
+affectiva_rating:
+  user: users(:two)
+  company: companies(:affectiva)
+  title: I love this job
+  value: 5
+  pros: An inclusive team
+  cons: Hard to commute to Boston
+  discriminated: false
+  discriminated_by_management: false
+  harassed: false
+  harassed_by_management: false
+  housework_required: false
+  included: true
