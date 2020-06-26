@@ -1,0 +1,11 @@
+<h2>Ratings</h2>
+<% @company.employee_ratings.each do |rating| %>
+  <table class='hreview' border="1" cellpadding="8" cellspacing="2">
+    <span class="item" style='visibility:hidden'><span class="fn"><%= @company.name %></span></span>
+    <td align="center">
+
+      <%= render "show_rating_detail", rating: rating %>
+
+    </td>
+  </table>
+<% end %>

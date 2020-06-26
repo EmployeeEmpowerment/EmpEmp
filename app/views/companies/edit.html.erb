@@ -1,4 +1,5 @@
 <% # Meta information for the <head> section %>
 <% content_for :title, "Edit #{@company.name}" %>
+<h1><%= yield(:title) %></h1>
 
 <%= render 'form', company: @company %>

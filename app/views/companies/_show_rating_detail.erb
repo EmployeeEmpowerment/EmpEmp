@@ -1,0 +1,34 @@
+<%= rating.value_html %><br>
+<span class='description'>
+  <strong><%= rating.headline %></strong>
+  <p>
+    <strong>Pros:</strong>
+    <%= rating.pros %>
+  </p>
+  <p>
+    <strong>Cons:</strong>
+    <%= rating.cons %>
+  </p>
+  <% if rating.discriminated %>
+    <% if rating.discriminated_by_management %>
+      Reviewer was discriminated against by management.
+    <% else %>
+      Reviewer was discriminated against.
+    <% end %>
+  <% end %>
+  <% if rating.harassed %>
+    <% if rating.harassed_by_management %>
+      Reviewer was harassed against by management.
+    <% else %>
+      Reviewer was harassed against.
+    <% end %>
+  <% end %>
+  <% if rating.housework_required %>
+    Reviewer was expected to do office housework that men were not expected to do.
+  <% end %>
+  <% if rating.included %>
+    Reviewer felt included.
+  <% else %>
+    Reviewer felt excluded.
+  <% end %>
+</span>

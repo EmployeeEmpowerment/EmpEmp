@@ -6,7 +6,7 @@ class CreateEmployeeRatings < ActiveRecord::Migration[6.0]
     create_table :employee_ratings do |t|
       t.references :user, null: false, foreign_key: true
       t.references :company, null: false, foreign_key: true
-      t.string :title
+      t.string :headline
       t.integer :value, limit: 1, null: false
       t.text :pros
       t.text :cons

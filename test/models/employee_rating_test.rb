@@ -60,4 +60,11 @@ class EmployeeRatingTest < ActiveSupport::TestCase
     rating.value = 2
     assert_not rating.save, 'Saved when user has duplicate ratings of a company!'
   end
+
+  test 'Rating has correct HTML value' do
+    rating = employee_ratings(:facebook_rating)
+    expected_str = '<img src=/Heart.png><img src=/EmptyHeart.png><img src=/EmptyHeart.png><img src=/EmptyHeart.png>'
+    expected_str += '<img src=/EmptyHeart.png>'
+    assert rating.value_html == expected_str, 'Rating has incorrect HTML value'
+  end
 end

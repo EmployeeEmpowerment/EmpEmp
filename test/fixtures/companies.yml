@@ -3,7 +3,17 @@
 affectiva:
   name: Affectiva
   ceo: Rana El Kaliouby
+  ceo_gender: F
+  ceo_race: ME
 
 facebook:
   name: Facebook
   ceo: Mark Zuckerburg
+  ceo_gender: M
+  ceo_race: W
+
+meditech:
+  name: MEDITECH
+  ceo: Howard Messing
+  ceo_gender: M
+  ceo_race: W

@@ -1,3 +1,4 @@
 <% content_for :title, "Edit #{@executive.name} of #{@company.name}" %>
+<h1>Edit Executive of <%= link_to @company.name, company_path(@company.id) %></h1>
 
 <%= render 'form', company: @company, executive: @executive %>

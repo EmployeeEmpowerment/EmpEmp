@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20_200_622_152_446) do
   create_table 'employee_ratings', force: :cascade do |t|
     t.bigint 'user_id', null: false
     t.bigint 'company_id', null: false
-    t.string 'title'
+    t.string 'headline'
     t.integer 'value', limit: 2, null: false
     t.text 'pros'
     t.text 'cons'

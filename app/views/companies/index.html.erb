@@ -1,6 +1,6 @@
 <% # Meta information for the <head> section %>
 <% content_for :title, "Companies" %>
-
+<h1><%= yield(:title) %></h1>
 <script>
 function sortTable(column) {
   var table = document.getElementById('Companies');
@@ -51,6 +51,7 @@ function sortTable(column) {
 <table cellpadding=3 cellspacing=2 id='Companies'>
   <tr>
     <th onclick='sortTable(0)' style='cursor:pointer'>Company</th>
+    <th onclick='sortTable(0)' style='cursor:pointer'>Rating</th>
     <th onclick='sortTable(1)' style='cursor:pointer'>CEO: Name</th>
     <th onclick='sortTable(2)' style='cursor:pointer'>Gender</th>
     <th onclick='sortTable(3)' style='cursor:pointer'>Race</th>
@@ -59,6 +60,7 @@ function sortTable(column) {
   <% @companies.sort_by(&:name).each do |company| %>
     <tr>
       <td><%= link_to company.name, company_path(company) %> <%= company.exec_diverse_score_html(25) %></td>
+      <td><%= company.rating_stats_html %></td>
       <td><%= company.ceo %></td>
       <td align=center><%= GENDERS[company.ceo_gender]['name'] %></td>
       <td align=center><%= RACES[company.ceo_race]['name'] %></td>
