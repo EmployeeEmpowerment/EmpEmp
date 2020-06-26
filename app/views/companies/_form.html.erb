@@ -1,12 +1,12 @@
 <%= form_with(model: company) do |form| %>
   <p>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required: true %>
   </p>
   
   <p>
     <%= form.label :ceo, 'CEO' %><br>
-    <%= form.text_field :ceo %>
+    <%= form.text_field :ceo, required: true %>
   </p>
   
   <p>
