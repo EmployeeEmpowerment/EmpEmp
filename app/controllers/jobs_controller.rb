@@ -32,7 +32,6 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     redirect_invalid_users
-    @job.user_id = current_user.id
 
     if @job.update(job_params)
       redirect_to jobs_path
@@ -49,14 +48,14 @@ class JobsController < ApplicationController
     redirect_to jobs_path
   end
 
+  private
+
   def redirect_invalid_users
     return if current_user.id == @job.user_id
 
     flash[:error] = "You cannot access someone else's jobs."
     redirect_to root_path
   end
-
-  private
 
   def job_params
     params.require(:job).permit(:title, :pay_rate, :pay_period, :start_date, :end_date, :company_id)

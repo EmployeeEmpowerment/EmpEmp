@@ -1,7 +1,4 @@
 <% content_for :title, "Edit Job" %>
+<h1><%= yield(:title) %></h1>
 
 <%= render 'form', job: @job %>
-
-<p>
-  <%= link_to 'Back', jobs_path %>
-</p>

@@ -6,6 +6,7 @@ class User < ApplicationRecord
   gravtastic size: 50
 
   has_many :jobs, dependent: :destroy
+  has_many :employee_ratings, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

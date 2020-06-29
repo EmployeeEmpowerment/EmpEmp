@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_601_195_808) do
+ActiveRecord::Schema.define(version: 20_200_622_152_446) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -23,6 +23,26 @@ ActiveRecord::Schema.define(version: 20_200_601_195_808) do
     t.datetime 'updated_at', precision: 6, null: false
     t.string 'ceo_gender'
     t.string 'ceo_race'
+  end
+
+  create_table 'employee_ratings', force: :cascade do |t|
+    t.bigint 'user_id', null: false
+    t.bigint 'company_id', null: false
+    t.string 'headline'
+    t.integer 'value', limit: 2, null: false
+    t.text 'pros'
+    t.text 'cons'
+    t.boolean 'discriminated'
+    t.boolean 'discriminated_by_management'
+    t.boolean 'harassed'
+    t.boolean 'harassed_by_management'
+    t.boolean 'housework_required'
+    t.boolean 'included'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['company_id'], name: 'index_employee_ratings_on_company_id'
+    t.index %w[user_id company_id], name: 'index_employee_ratings_on_user_id_and_company_id', unique: true
+    t.index ['user_id'], name: 'index_employee_ratings_on_user_id'
   end
 
   create_table 'executives', force: :cascade do |t|
@@ -75,6 +95,8 @@ ActiveRecord::Schema.define(version: 20_200_601_195_808) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
+  add_foreign_key 'employee_ratings', 'companies'
+  add_foreign_key 'employee_ratings', 'users'
   add_foreign_key 'executives', 'companies'
   add_foreign_key 'jobs', 'companies'
   add_foreign_key 'jobs', 'users'

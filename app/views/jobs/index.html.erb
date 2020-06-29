@@ -1,5 +1,6 @@
 <% @user = current_user %>
 <% content_for :title, "#{@user.name}'s Profile" %>
+<h1><%= yield(:title) %></h1>
 <%= @user.display.html_safe %><br>
 <% unless @user.gender.nil? %>
   <p><b>Gender:</b> <%= GENDERS[@user.gender]['name'] %>,
@@ -16,6 +17,7 @@
   <b>Birth Year:</b> <%= @user.year_of_birth %><br>
 <% end %>
 <p><%= link_to 'Edit profile', edit_user_registration_path %><br>
+
 <% if @user.jobs.any? %>
   <p>
   <table>
@@ -31,13 +33,33 @@
         <td align='right'><%= number_to_currency(job.pay_rate, precision: job.pay_period == 'H' ? 2 : 0) %></td>
         <td><%= job.title %></td>
         <td><%= job.start_date %></td>
-        <td><%= link_to 'Edit', edit_job_path(job.id) %></td>
-        <td><%= link_to 'Delete', job_path(job.id),
+        <td><%= link_to '[Edit]', edit_job_path(job.id) %></td>
+        <td><%= link_to '[Delete]', job_path(job.id),
           method: :delete,
           data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </table><br>
-  <% end %>
+<% end %>
 
+<% if @user.employee_ratings.any? %>
+  <strong>Your Ratings:</strong>
+  <table cellspacing=5 border=1>
+    <% @user.employee_ratings.each do |employee_rating| %>
+      <tr class='hreview'>
+        <span style='visibility:hidden'><span class='reviewer'><%= @user.name %></span></span>
+        <td align=center>
+          <span class="item"><span class='fn'>
+            <%= link_to employee_rating.company.name, company_path(employee_rating.company_id) %>
+          </span></span> <br>
+          <%= employee_rating.value_html %><br>
+          <%= link_to '[Edit]', edit_company_employee_rating_path(employee_rating.company_id,
+                                                                              employee_rating.id) %>
+          <%= link_to '[Delete]', [employee_rating.company, employee_rating],
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %>
+        </td></tr>
+    <% end %>
+  </table>
+<% end %>
 <p><%= link_to 'New job', new_job_path %></p>

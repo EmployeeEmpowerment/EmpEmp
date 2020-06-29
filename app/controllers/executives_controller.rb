@@ -2,7 +2,7 @@
 
 # Controller for Executives
 class ExecutivesController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create destroy edit]
+  before_action :authenticate_user!, only: %i[new create destroy edit update]
 
   # File after submission in new.html.erb
   def create

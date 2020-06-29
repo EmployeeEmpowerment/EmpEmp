@@ -1,0 +1,67 @@
+<script>
+function toggle(section) {
+    const area = document.getElementById(section).style
+    if (area.display == 'inline') {
+        area.display = 'none'
+    } else {
+        area.display = 'inline'
+    }
+}
+</script>
+<%= form_with(model: [company, employee_rating]) do |form| %>
+  <p>
+    <%= form.label :headline %>
+    <%= form.text_field :headline %>
+  </p>
+  <p>
+    <%= form.label 'Overall Rating' %>
+    <%= form.select :value, [['1 heart',1], ['2 hearts',2], ['3 hearts',3], ['4 hearts',4], ['5 hearts',5]] %>
+  </p>
+  <p>
+    <%= form.label :pros %><br>
+    <%= form.text_area :pros, size: "60x5" %>
+  </p>
+  <p>
+    <%= form.label :cons %><br>
+    <%= form.text_area :cons, size: "60x5" %>
+  </p>
+  <p>
+    <%= form.label :discriminated %>
+    <%= form.check_box :discriminated, :onclick => "toggle('dis_by_mgmt')" %>
+  </p>
+  <div style="display:none;" id='dis_by_mgmt'>
+    <p>
+      <%= form.label :discriminated_by_management %>
+      <%= form.check_box :discriminated_by_management %>
+    </p>
+  </div>
+  <p>
+    <%= form.label :harassed %>
+    <%= form.check_box :harassed, :onclick => "toggle('harassed_by_mgmt')" %>
+  </p>
+  <div style="display:none;" id='harassed_by_mgmt'>
+    <p>
+      <%= form.label :harassed_by_management %>
+      <%= form.check_box :harassed_by_management %>
+    </p>
+  </div>
+  <% if current_user.gender != 'M' %>
+    <p>
+      <%= form.label "Expected to do office housework that men in your role aren't required to do?" %>
+      <%= form.check_box :housework_required %>
+    </p>
+  <% end %>
+  <p>
+    <%= form.label 'Do you feel included?' %>
+    <%= form.check_box :included %>
+  </p>
+  <p>
+    I affirm that my Experience at my current or former employer, <%= company.name %>, is truthful.
+    <%= form.check_box :affirmed_truthfulness, required: true %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<p><%= link_to 'Back', company_path(@company.id) %></p>

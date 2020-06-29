@@ -6,7 +6,7 @@
   
   <p>
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, required: true %>
   </p>
   
   <p>
@@ -30,3 +30,5 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+<p><%= link_to 'Back', company_path(@company.id) %></p>
