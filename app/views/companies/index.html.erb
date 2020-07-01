@@ -3,13 +3,13 @@
 <h1><%= yield(:title) %></h1>
 <script>
 function sortTable(column) {
-  var table = document.getElementById('Companies');
-  var switching = true;
-  var dir = 'asc';
-  var switchCount = 0;
-  var rows, i, x, y, shouldSwitch;
-  
-  while (switching) {
+    const table = document.getElementById('Companies');
+    let switching = true;
+    let dir = 'asc';
+    let switchCount = 0;
+    let rows, i, x, y, shouldSwitch;
+
+    while (switching) {
     switching = false;
     rows = table.rows;
   
@@ -17,14 +17,14 @@ function sortTable(column) {
       shouldSwitch = false;
       x = rows[i].getElementsByTagName('TD')[column];
       y = rows[i + 1].getElementsByTagName('TD')[column];
-      
-      if (dir == 'asc') {
+
+      if (dir === 'asc') {
         if (x.innerText.toLowerCase() > y.innerText.toLowerCase()) {
           shouldSwitch = true;
           break;
         }
       }
-      else if (dir == 'desc') {
+      else if (dir === 'desc') {
         if (x.innerText.toLowerCase() < y.innerText.toLowerCase()) {
           shouldSwitch = true;
           break;
@@ -38,7 +38,7 @@ function sortTable(column) {
       switchCount ++;
     }
     else {
-      if (switchCount == 0 && dir == 'asc') {
+      if (switchCount === 0 && dir === 'asc') {
         dir = 'desc';
         switching = true;
       }
@@ -51,13 +51,13 @@ function sortTable(column) {
 <table cellpadding=3 cellspacing=2 id='Companies'>
   <tr>
     <th onclick='sortTable(0)' style='cursor:pointer'>Company</th>
-    <th onclick='sortTable(0)' style='cursor:pointer'>Rating</th>
-    <th onclick='sortTable(1)' style='cursor:pointer'>CEO: Name</th>
-    <th onclick='sortTable(2)' style='cursor:pointer'>Gender</th>
-    <th onclick='sortTable(3)' style='cursor:pointer'>Race</th>
+    <th onclick='sortTable(1)' style='cursor:pointer'>Rating</th>
+    <th onclick='sortTable(2)' style='cursor:pointer'>CEO: Name</th>
+    <th onclick='sortTable(3)' style='cursor:pointer'>Gender</th>
+    <th onclick='sortTable(4)' style='cursor:pointer'>Race</th>
   </tr>
  
-  <% @companies.sort_by(&:name).each do |company| %>
+  <% @companies.sort_by(&:sort_value).reverse.each do |company| %>
     <tr>
       <td><%= link_to company.name, company_path(company) %> <%= company.exec_diverse_score_html(25) %></td>
       <td><%= company.rating_stats_html %></td>
