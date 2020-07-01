@@ -44,4 +44,9 @@ class CompanyTest < ActiveSupport::TestCase
 
     assert company.exec_diverse_score_html == expected, 'Failed to get correct good diversity score!'
   end
+
+  test 'Sort value is accurate' do
+    company = companies(:facebook)
+    assert company.sort_value.zero?, 'Sort value is incorrect!'
+  end
 end

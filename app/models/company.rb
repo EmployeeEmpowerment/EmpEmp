@@ -30,15 +30,21 @@ class Company < ApplicationRecord
 
     avg += 1 if fraction > 0.75
 
-    str = "<table><td valign=center><b class='rating'>" + rating_avg.to_s + '</b></td><td>'
-    str += rating_hearts_html(avg, half)
+    str = "<b class='rating'>" + rating_avg.to_s + '</b>' + rating_hearts_html(avg, half)
     str += " (<span class='count'>" + employee_ratings.count.to_s
-    str += '</span> ' + 'rating'.pluralize(employee_ratings.count) + ')</td></table>'
+    str += '</span> ' + 'rating'.pluralize(employee_ratings.count) + ')'
 
     # rubocop:disable Rails/OutputSafety
     str.html_safe
     # rubocop:enable Rails/OutputSafety
     # rubocop:enable Metrics/AbcSize
+  end
+
+  def sort_value
+    return 0 if employee_ratings.none?
+
+    avg = rating_avg
+    avg * 100 + employee_ratings.count
   end
 
   private
