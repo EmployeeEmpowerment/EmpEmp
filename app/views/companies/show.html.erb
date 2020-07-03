@@ -1,8 +1,9 @@
 <div class="vcard">
-  <% content_for :title, @company.name %>
+  <% content_for :title, @company.name + ' Ratings and Diversity Score'%>
+  <% meta_tag :description, "Details about #{@company.name} including employee ratings, executive diversity, employee inclusion, pay, and demographics." %>
   <h1><div class="org"><%= yield(:title) %></div></h1>
   <% if @company.employee_ratings.any? %>
-    <%= @company.rating_stats_html %>
+    <%= @company.rating_stats_html %><br>
   <% end %>
   <% if user_signed_in? %>
     <% if review = EmployeeRating.find_by_user_id_and_company_id(current_user.id, @company.id) %>

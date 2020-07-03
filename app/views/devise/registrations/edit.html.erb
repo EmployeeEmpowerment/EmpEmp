@@ -1,4 +1,5 @@
 <% content_for :title, "Edit #{resource_name.to_s.humanize}" %>
+<% meta_tag :description, "Edit information about #{resource_name.to_s.humanize}." %>
 <h1><%= yield(:title) %></h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <meta name="Author" content="The Employee Empowerment Team">
@@ -7,6 +7,8 @@
     <meta name=Copyright content="&copy; 2020 The Employee Empowerment Team">
     <meta name="KeyWords" content="Pay Gap, Equity, Employee Empowerment">
     <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name='description'
+          content='<%= yield_meta_tag(:description, '"A page on closing the wage gap."') %>' />
     <title>
       <%= if content_for?(:title) then yield(:title) + ' | ' end %>
       Employee Empowerment
@@ -17,7 +19,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ed7e73c9d18cc0012dffec5&product=inline-share-buttons&cms=sop' async='async'></script>
+    <link rel="preconnect" href="https://platform-api.sharethis.com">
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ed7e73c9d18cc0012dffec5&product=inline-share-buttons&cms=sop' async='async'></script>
 </head>
 
 <body bgcolor="#FFFFFF" text="#000000" link="#0033FF" vlink="#0033AA" alink="#0033FF" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
@@ -67,15 +70,15 @@
     <center>
       <%= yield %>
     </center>
+  </td>
+</table>
 <table align="center" cellpadding=5>
-<tr>
-<td bgcolor="#E6E6E6">
-<p align="center"><font face="verdana">Copyright (C) 2020 The Employee Empowerment Team</font></p>
-<center>
-<div class="sharethis-inline-share-buttons"></div>
-</center>
-</td>
-</tr>
+  <tr>
+  <td bgcolor="#E6E6E6">
+  <p align="center"><font face="verdana">Copyright (C) 2020 The Employee Empowerment Team</font></p>
+  <div  style="text-align: center;" class="sharethis-inline-share-buttons"></div>
+  </td>
+  </tr>
 </table>
 
 </body>

@@ -1,4 +1,5 @@
 <% content_for :title, "Edit Job" %>
+<% meta_tag :description, "Edit information about your job." %>
 <h1><%= yield(:title) %></h1>
 
 <%= render 'form', job: @job %>

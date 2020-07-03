@@ -1,4 +1,5 @@
 <% content_for :title, "Add Employee Review of #{@company.name}" %>
+<% meta_tag :description, "Add an employee review of #{@company.name} to help candidates and other employees." %>
 <h1>Add Employee Review of <%= link_to @company.name, company_path(@company.id) %></h1>
 
 <%= render 'form', company: @company, employee_rating: @employee_rating %>

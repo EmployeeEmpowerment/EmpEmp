@@ -1,5 +1,6 @@
 <% @user = current_user %>
 <% content_for :title, "#{@user.name}'s Profile" %>
+<% meta_tag :description, "Detailed information about #{@user.name}." %>
 <h1><%= yield(:title) %></h1>
 <%= @user.display.html_safe %><br>
 <% unless @user.gender.nil? %>
