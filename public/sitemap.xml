@@ -10,19 +10,7 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/4</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>http://www.empemp.org/companies/8</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>http://www.empemp.org/companies/1</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>http://www.empemp.org/companies/5</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -30,15 +18,39 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/6</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>http://www.empemp.org/companies/3</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>http://www.empemp.org/companies/4</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://www.empemp.org/companies/5</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://www.empemp.org/companies/6</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>http://www.empemp.org/companies/7</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://www.empemp.org/companies/8</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://www.empemp.org/companies/9</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://www.empemp.org/companies/10</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://www.empemp.org/companies/11</loc>
     <changefreq>monthly</changefreq>
   </url>
 </urlset>

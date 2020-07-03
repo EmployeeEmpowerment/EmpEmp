@@ -1,5 +1,6 @@
 <% # Meta information for the <head> section %>
 <% content_for :title, "Companies" %>
+<% meta_tag :description, "A list of companies with executive diversity scorecards and overall ratings." %>
 <h1><%= yield(:title) %></h1>
 <script>
 function sortTable(column) {
@@ -59,8 +60,8 @@ function sortTable(column) {
  
   <% @companies.sort_by(&:sort_value).reverse.each do |company| %>
     <tr>
-      <td><%= link_to company.name, company_path(company) %> <%= company.exec_diverse_score_html(25) %></td>
-      <td><%= company.rating_stats_html %></td>
+      <td><%= link_to company.name, company_path(company) %></td>
+      <td><%= company.rating_stats_html %> <%= company.exec_diverse_score_html(25) %></td>
       <td><%= company.ceo %></td>
       <td align=center><%= GENDERS[company.ceo_gender]['name'] %></td>
       <td align=center><%= RACES[company.ceo_race]['name'] %></td>

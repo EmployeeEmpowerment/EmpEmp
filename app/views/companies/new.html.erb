@@ -1,4 +1,5 @@
 <% content_for :title, "New Company" %>
+<% meta_tag :description, "Add a company to the Employee Empowerment website." %>
 <h1><%= yield(:title) %></h1>
 
 <%= render 'form', company: @company %>
