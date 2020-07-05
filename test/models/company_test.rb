@@ -3,6 +3,8 @@
 require 'test_helper'
 
 class CompanyTest < ActiveSupport::TestCase
+  # Filer tests ---------------------------------------------------------
+
   test 'should not save company without name' do
     company = Company.new
     assert_not company.save, 'Saved company without name!'
@@ -12,15 +14,71 @@ class CompanyTest < ActiveSupport::TestCase
     company = Company.new
     company.name = 'Test Co.'
     company.ceo = 'Ed'
-    assert_not company.save, 'Saved company with 2 charachter CEO!'
+    assert_not company.save, 'Saved company with 2 character CEO!'
   end
 
   test 'should save valid company' do
     company = Company.new
     company.name = 'Valid Co.'
     company.ceo = 'Ed Valid'
+    company.ceo_annual_salary = 250_000
+    company.ceo_annual_bonus = 50_000
+    company.ceo_annual_sold_shares = 25_000
+    company.ceo_shares = 500_000
+    company.stock_isin = 'US0917971006'
+    company.ceo_annual_stock_award = 12_500
     assert company.save, 'Failed to save company with valid info!'
   end
+
+  test "shouldn't save negative ceo salary" do
+    company = Company.new
+    company.name = 'Valid Co.'
+    company.ceo = 'Ed Valid'
+    company.ceo_annual_salary = -1
+    assert_not company.save, 'Saved company with negative salary!'
+  end
+
+  test "shouldn't save negative ceo bonus" do
+    company = Company.new
+    company.name = 'Valid Co.'
+    company.ceo = 'Ed Valid'
+    company.ceo_annual_bonus = -1
+    assert_not company.save, 'Saved company with negative bonus!'
+  end
+
+  test "shouldn't save negative ceo shares" do
+    company = Company.new
+    company.name = 'Valid Co.'
+    company.ceo = 'Ed Valid'
+    company.ceo_shares = -1
+    assert_not company.save, 'Saved company with negative shares!'
+  end
+
+  test "shouldn't save negative CEO stock award" do
+    company = Company.new
+    company.name = 'Valid Co.'
+    company.ceo = 'Ed Valid'
+    company.ceo_annual_stock_award = -1
+    assert_not company.save, 'Saved company with negative CEO stock award!'
+  end
+
+  test "shouldn't save invalid ISIN" do
+    company = Company.new
+    company.name = 'Valid Co.'
+    company.ceo = 'Ed Valid'
+    company.stock_isin = 'KO'
+    assert_not company.save, 'Saved company with invalid ISIN!'
+  end
+
+  test "shouldn't save duplicate ISIN" do
+    company = Company.new
+    company.name = 'Valid Co.'
+    company.ceo = 'Ed Valid'
+    company.stock_isin = 'US30303M1027'
+    assert_not company.save, 'Saved company with duplicate ISIN!'
+  end
+
+  # Method Tests ---------------------------------------------------------
 
   test 'Overall rating has correct value' do
     company = companies(:meditech)
@@ -48,5 +106,10 @@ class CompanyTest < ActiveSupport::TestCase
   test 'Sort value is accurate' do
     company = companies(:facebook)
     assert company.sort_value.zero?, 'Sort value is incorrect!'
+  end
+
+  test 'Total comp is accurate' do
+    company = companies(:facebook)
+    assert company.ceo_total_comp == 1_800_000_001, 'Total comp is incorrect!'
   end
 end

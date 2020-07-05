@@ -5,15 +5,33 @@ affectiva:
   ceo: Rana El Kaliouby
   ceo_gender: F
   ceo_race: ME
+  ceo_annual_salary: 250000
+  ceo_annual_bonus: 0
+  ceo_shares: 250000
+  ceo_annual_sold_shares: 0
+  ceo_annual_stock_award: 0
+  stock_isin:
 
 facebook:
   name: Facebook
   ceo: Mark Zuckerburg
   ceo_gender: M
   ceo_race: W
+  ceo_annual_salary: 1
+  ceo_annual_bonus: 0
+  ceo_shares: 400000000
+  ceo_annual_sold_shares: 1800000000
+  ceo_annual_stock_award: 0
+  stock_isin: US30303M1027
 
 meditech:
   name: MEDITECH
   ceo: Howard Messing
   ceo_gender: M
   ceo_race: W
+  ceo_annual_salary: 450000
+  ceo_annual_bonus: 7584
+  ceo_shares: 405000
+  ceo_annual_sold_shares: 0
+  ceo_annual_stock_award: 0
+  stock_isin:

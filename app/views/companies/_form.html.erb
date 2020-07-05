@@ -3,6 +3,11 @@
     <%= form.label :name %><br>
     <%= form.text_field :name, required: true %>
   </p>
+
+  <p>
+    <%= form.label :stock_isin, 'Stock ISIN' %><br>
+    <%= form.text_field :stock_isin %>
+  </p>
   
   <p>
     <%= form.label :ceo, 'CEO' %><br>
@@ -19,6 +24,31 @@
     <%= form.label :ceo_race, "CEO's Race" %><br>
     <% races_array = RACES.flatten.map { |race| [race['name'], race['abbreviation']] if race['name'] }.compact %>
     <%= form.select :ceo_race, races_array %>
+  </p>
+
+  <p>
+    <%= form.label :ceo_annual_salary, "CEO's Annual Salary" %><br>
+    <%= form.text_field :ceo_annual_salary, value: number_to_currency(form.object.ceo_annual_sold_shares.to_f, precision: 0, delimiter: '', unit: ''), step: :any %>
+  </p>
+
+  <p>
+    <%= form.label :ceo_annual_bonus, "CEO's Annual Bonus" %><br>
+    <%= form.text_field :ceo_annual_bonus, value: number_to_currency(form.object.ceo_annual_sold_shares.to_f, precision: 0, delimiter: '', unit: ''), step: :any %>
+  </p>
+
+  <p>
+    <%= form.label :ceo_annual_sold_shares, "CEO's Annual Sold Shares" %><br>
+    <%= form.text_field :ceo_annual_sold_shares, value: number_to_currency(form.object.ceo_annual_sold_shares.to_f, precision: 0, delimiter: '', unit: ''), step: :any %>
+  </p>
+
+  <p>
+    <%= form.label :ceo_annual_stock_award, "CEO's Annual Stock Award" %><br>
+    <%= form.text_field :ceo_annual_sold_shares, value: number_to_currency(form.object.ceo_annual_sold_shares.to_f, precision: 0, delimiter: '', unit: ''), step: :any %>
+  </p>
+
+  <p>
+    <%= form.label :ceo_shares, "CEO's Total Shares" %><br>
+    <%= form.text_field :ceo_shares %>
   </p>
   
   <p>

@@ -54,6 +54,7 @@ function sortTable(column) {
     <th onclick='sortTable(0)' style='cursor:pointer'>Company</th>
     <th onclick='sortTable(1)' style='cursor:pointer'>Rating</th>
     <th onclick='sortTable(2)' style='cursor:pointer'>CEO: Name</th>
+    <th onclick='sortTable(2)' style='cursor:pointer'>Annual Comp</th>
     <th onclick='sortTable(3)' style='cursor:pointer'>Gender</th>
     <th onclick='sortTable(4)' style='cursor:pointer'>Race</th>
   </tr>
@@ -63,6 +64,11 @@ function sortTable(column) {
       <td><%= link_to company.name, company_path(company) %></td>
       <td><%= company.rating_stats_html %> <%= company.exec_diverse_score_html(25) %></td>
       <td><%= company.ceo %></td>
+      <td>
+        <% if ! company.ceo_total_comp.nil? %>
+          <%= number_to_currency(company.ceo_total_comp, precision: 0) %>
+        <% end %>
+      </td>
       <td align=center><%= GENDERS[company.ceo_gender]['name'] %></td>
       <td align=center><%= RACES[company.ceo_race]['name'] %></td>
     </tr>
