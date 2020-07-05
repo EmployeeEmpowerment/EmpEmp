@@ -3,6 +3,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+ruby '2.7.0'
+
 # Gems for User:
 gem 'devise'
 gem 'gravtastic'
@@ -12,7 +14,7 @@ gem 'omniauth-linkedin-oauth2'
 gem 'rubocop-rails', '~> 2.5.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
+gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postgres for Active Record
 gem 'pg'
 # Use Puma as the app server
