@@ -1,5 +1,5 @@
 <div class="vcard">
-  <% content_for :title, @company.name + ' Ratings and Diversity Score'%>
+  <% content_for :title, @company.name + "'s Ratings and Diversity Score"%>
   <% meta_tag :description, "Details about #{@company.name} including employee ratings, executive diversity, employee inclusion, pay, and demographics." %>
   <h1><div class="org"><%= yield(:title) %></div></h1>
   <% if @company.employee_ratings.any? %>
@@ -15,13 +15,23 @@
       <%= link_to '[Add A Review]', new_company_employee_rating_path(@company.id) %><br>
     <% end %>
   <% end %>
-
+  <% if ! @company.stock_isin.nil? %>
+    <strong>Stock</strong>: ISIN <%= @company.stock_isin %> view
+    <a href="https://www.boerse-berlin.com/index.php/Shares?isin=<%= @company.stock_isin %>">
+      details on Börse Berlin's website</a>.<br>
+<% end %>
   <%= @company.exec_diverse_score_html %><br>
   <strong><span class="title">CEO</span>:</strong>
   <span class="fn"><%= @company.ceo %></span>
   (<%= GENDERS[@company.ceo_gender]['name'] %> - <%= RACES[@company.ceo_race]['name'] %>)
   <%= link_to 'Edit', edit_company_path(@company.id) %><br>
-
+  <% if ! @company.ceo_total_comp.nil? %>
+    <li><strong>Annual Comp</strong>: <%= number_to_currency(@company.ceo_total_comp, precision: 0) %></li>
+  <% end %>
+  <% if @company.ceo_shares %>
+    <li><strong>Stock</strong>: <%= number_with_delimiter(@company.ceo_shares) %> Shares</li>
+  <% end %>
+  <br>
   <% @company.executives.each do |exec| %>
     <strong><%= exec.title %>:</strong>
     <%= exec.name %> (<%= GENDERS[exec.gender]['name'] %> - <%= RACES[exec.race]['name'] %>)

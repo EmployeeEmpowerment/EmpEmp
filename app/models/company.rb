@@ -10,6 +10,22 @@ class Company < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 3 }
   validates :ceo, length: { minimum: 4 }
+  validates :stock_isin, format: { with: /\A[A-Z]{2}[A-Z0-9]{9}[0-9]{1}\z/ }
+  validates :ceo_annual_sold_shares, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :ceo_shares, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :ceo_annual_bonus, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :ceo_annual_salary, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
+  def ceo_total_comp
+    return if ceo_annual_stock_award.nil? && ceo_annual_salary.nil? &&
+              ceo_annual_bonus.nil? && ceo_annual_sold_shares.nil?
+
+    total = 0
+    [ceo_annual_stock_award, ceo_annual_salary, ceo_annual_bonus, ceo_annual_sold_shares].each do |value|
+      total += value unless value.nil?
+    end
+    total
+  end
 
   def exec_diverse_score_html(img_height = 120)
     str = exec_gender_score(img_height) + exec_race_score(img_height)
