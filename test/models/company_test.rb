@@ -83,7 +83,7 @@ class CompanyTest < ActiveSupport::TestCase
   test 'Overall rating has correct value' do
     company = companies(:meditech)
     expected = "(<span class='count'>0</span> ratings)"
-    assert expected == company.rating_stats_html, 'Failed to get correct overall rating!'
+    assert_equal expected, company.rating_stats_html, 'Failed to get correct overall rating!'
   end
 
   test 'Diversity score has correct bad value' do
@@ -91,7 +91,7 @@ class CompanyTest < ActiveSupport::TestCase
     expected = "<img src='/gender_undiverse_exec.png' height='120' alt='Gender Exclusionary Executive Team' "
     expected += "title='Gender Exclusionary Executive Team'><img src='/race_undiverse_exec.png' height='120' "
     expected += "alt='Racially Exclusionary Executive Team' title='Racially Exclusionary Executive Team'>"
-    assert company.exec_diverse_score_html == expected, 'Failed to get correct bad diversity score!'
+    assert_equal expected, company.exec_diverse_score_html, 'Failed to get correct bad diversity score!'
   end
 
   test 'Diversity score has correct good value' do
@@ -100,7 +100,7 @@ class CompanyTest < ActiveSupport::TestCase
     expected += "title='Gender Inclusive Executive Team'><img src='/race_diverse_exec.png' height='120' "
     expected += "alt='Racially Inclusive Executive Team' title='Racially Inclusive Executive Team'>"
 
-    assert company.exec_diverse_score_html == expected, 'Failed to get correct good diversity score!'
+    assert_equal expected, company.exec_diverse_score_html, 'Failed to get correct good diversity score!'
   end
 
   test 'Sort value is accurate' do
@@ -108,8 +108,20 @@ class CompanyTest < ActiveSupport::TestCase
     assert company.sort_value.zero?, 'Sort value is incorrect!'
   end
 
-  test 'Total comp is accurate' do
+  test 'Total comp for fixture is accurate' do
     company = companies(:facebook)
-    assert company.ceo_total_comp == 1_800_000_001, 'Total comp is incorrect!'
+    assert_equal 1_800_000_001, company.ceo_total_comp, 'Total comp for fixture is incorrect!'
+  end
+
+  test 'Total comp is accurate' do
+    company = Company.new
+    company.name = 'Valid Co.'
+    company.ceo = 'Ed Valid'
+    company.ceo_annual_salary = 250_000
+    company.ceo_annual_bonus = 50_000
+    company.ceo_annual_sold_shares = 25_000
+    company.ceo_annual_stock_award = 12_500
+    company.save
+    assert_equal 337_500, company.ceo_total_comp, 'Total comp is incorrect!'
   end
 end

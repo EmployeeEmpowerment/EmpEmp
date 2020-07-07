@@ -3,6 +3,10 @@ require: rubocop-rails
 Metrics/AbcSize:
   Max: 20
 
+Metrics/ClassLength:
+  Exclude:
+  - 'test/models/company_test.rb'
+
 Layout/LineLength:
   Max: 120
   Exclude:

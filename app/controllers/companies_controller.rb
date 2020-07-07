@@ -44,6 +44,7 @@ class CompaniesController < ApplicationController
 
   def company_params
     params.require(:company).permit(:name, :ceo, :company_id, :ceo_gender, :ceo_race, :stock_isin,
-                                    :ceo_annual_salary, :ceo_annual_bonus, :ceo_annual_sold_shares, :ceo_shares)
+                                    :ceo_annual_salary, :ceo_annual_bonus, :ceo_annual_sold_shares,
+                                    :ceo_annual_stock_award, :ceo_shares)
   end
 end
