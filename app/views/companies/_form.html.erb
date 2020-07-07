@@ -28,12 +28,12 @@
 
   <p>
     <%= form.label :ceo_annual_salary, "CEO's Annual Salary" %><br>
-    <%= form.text_field :ceo_annual_salary, value: number_to_currency(form.object.ceo_annual_sold_shares.to_f, precision: 0, delimiter: '', unit: ''), step: :any %>
+    <%= form.text_field :ceo_annual_salary, value: number_to_currency(form.object.ceo_annual_salary.to_f, precision: 0, delimiter: '', unit: ''), step: :any %>
   </p>
 
   <p>
     <%= form.label :ceo_annual_bonus, "CEO's Annual Bonus" %><br>
-    <%= form.text_field :ceo_annual_bonus, value: number_to_currency(form.object.ceo_annual_sold_shares.to_f, precision: 0, delimiter: '', unit: ''), step: :any %>
+    <%= form.text_field :ceo_annual_bonus, value: number_to_currency(form.object.ceo_annual_bonus.to_f, precision: 0, delimiter: '', unit: ''), step: :any %>
   </p>
 
   <p>
@@ -43,7 +43,7 @@
 
   <p>
     <%= form.label :ceo_annual_stock_award, "CEO's Annual Stock Award" %><br>
-    <%= form.text_field :ceo_annual_sold_shares, value: number_to_currency(form.object.ceo_annual_sold_shares.to_f, precision: 0, delimiter: '', unit: ''), step: :any %>
+    <%= form.text_field :ceo_annual_stock_award, value: number_to_currency(form.object.ceo_annual_stock_award.to_f, precision: 0, delimiter: '', unit: ''), step: :any %>
   </p>
 
   <p>
