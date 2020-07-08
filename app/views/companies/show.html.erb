@@ -25,7 +25,7 @@
   <span class="fn"><%= @company.ceo %></span>
   (<%= GENDERS[@company.ceo_gender]['name'] %> - <%= RACES[@company.ceo_race]['name'] %>)
   <%= link_to 'Edit', edit_company_path(@company.id) %><br>
-  <% if ! @company.ceo_total_comp.nil? %>
+  <% unless 0 === @company.ceo_total_comp %>
     <li><strong>Annual Comp</strong>: <%= number_to_currency(@company.ceo_total_comp, precision: 0) %></li>
   <% end %>
   <% if @company.ceo_shares %>

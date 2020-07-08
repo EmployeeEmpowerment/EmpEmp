@@ -1,7 +1,8 @@
-<%= form_with(model: [company, executive]) do |form| %>
+<%= form_with model: [company, executive], local: true do |form| %>
+  <%= render partial: "shared/errors", locals: {errors: executive.errors} %>
   <p>
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required: true %>
   </p>
   
   <p>

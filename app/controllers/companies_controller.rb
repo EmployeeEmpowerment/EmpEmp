@@ -30,11 +30,12 @@ class CompaniesController < ApplicationController
     end
   end
 
+  # File after submission in edit.html.erb
   def update
     @company = Company.find(params[:id])
 
     if @company.update(company_params)
-      redirect_to companies_path
+      redirect_to company_url(@company)
     else
       render 'edit'
     end

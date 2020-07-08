@@ -4,3 +4,7 @@
 <h1><%= yield(:title) %></h1>
 
 <%= render 'form', company: @company %>
+
+<p>
+  <%= link_to 'Back', company_path(@company) %>
+</p>

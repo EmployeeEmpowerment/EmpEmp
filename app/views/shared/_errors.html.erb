@@ -1,0 +1,12 @@
+<% if errors.any? %>
+  <div id="error_explanation"><span style="color: red; ">
+      <h2>
+        <%= pluralize(errors.count, "error") %> prohibited this from being saved:
+      </h2>
+      <ul>
+        <% errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </span></div>
+<% end %>
