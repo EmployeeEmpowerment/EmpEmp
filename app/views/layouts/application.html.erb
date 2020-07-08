@@ -35,16 +35,16 @@
         Follow us on<br>
 	<a href="https://www.linkedin.com/company/empemp/"><img src="/li-logo.png" alt="LinkedIn"></a> <a href="https://www.facebook.com/EmployeeEmp/"><img src="/fb-logo.png" alt="Facebook"></a> <a href="https://twitter.com/EmpEmp8"><img src="/twitter-logo.png" alt="Twitter"></a>
       </center>
-    </td>  
+    </td>
    <td align=center>
      <a href='https://github.com/EmployeeEmpowerment/EmpEmp/'>Help Code</a>
    </td>
-   <td align=right> 
+   <td align=right>
      <center>
        <% if user_signed_in? %>
          <table><tr>
            <td><%= current_user.display.html_safe %></td>
-           <td>  
+           <td>
              <%= link_to 'View profile', jobs_path %><br>
              <%= link_to("Logout", destroy_user_session_path, :method => :delete) %><br>
            </td>

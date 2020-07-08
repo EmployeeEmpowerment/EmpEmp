@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_704_222_438) do
+ActiveRecord::Schema.define(version: 20_200_707_225_854) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20_200_704_222_438) do
     t.integer 'ceo_annual_sold_shares'
     t.integer 'ceo_annual_stock_award'
     t.string 'stock_isin'
-    t.index ['stock_isin'], name: 'index_companies_on_stock_isin', unique: true
   end
 
   create_table 'employee_ratings', force: :cascade do |t|

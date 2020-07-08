@@ -35,3 +35,15 @@ meditech:
   ceo_annual_sold_shares: 0
   ceo_annual_stock_award: 0
   stock_isin:
+
+apple:
+  name: Apple
+  ceo: Tim Cook
+  ceo_gender: M
+  ceo_race: W
+  ceo_annual_salary: 0
+  ceo_annual_bonus: 0
+  ceo_shares: 0
+  ceo_annual_sold_shares: 0
+  ceo_annual_stock_award: 0
+  stock_isin:

@@ -42,6 +42,7 @@
     <% end %>
   </table><br>
 <% end %>
+<p><%= link_to 'New job', new_job_path %></p>
 
 <% if @user.employee_ratings.any? %>
   <strong>Your Ratings:</strong>
@@ -63,4 +64,3 @@
     <% end %>
   </table>
 <% end %>
-<p><%= link_to 'New job', new_job_path %></p>

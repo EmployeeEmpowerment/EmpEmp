@@ -1,4 +1,5 @@
-<%= form_with(model: company) do |form| %>
+<%= form_with model: company, local: true do |form| %>
+  <%= render partial: "shared/errors", locals: {errors: company.errors} %>
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name, required: true %>
@@ -56,7 +57,3 @@
   </p>
 
 <% end %>
-
-<p>
-  <%= link_to 'Back', companies_path %>
-</p>

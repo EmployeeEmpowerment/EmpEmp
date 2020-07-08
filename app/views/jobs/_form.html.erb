@@ -1,4 +1,5 @@
-<%= form_with(model: job) do |form| %>
+<%= form_with model: job, local: true  do |form| %>
+  <%= render partial: "shared/errors", locals: {errors: job.errors} %>
   <p>
     <%= form.label :company %>
     <%= form.collection_select(:company_id, Company.all, :id, :name) %>

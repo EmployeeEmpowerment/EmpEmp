@@ -3,8 +3,16 @@
 require 'test_helper'
 
 class ExecutiveTest < ActiveSupport::TestCase
+  test 'should not save exec without name' do
+    executive = Executive.new
+    executive.title = 'Chief Potato Officer'
+    executive.company_id = companies(:affectiva).id
+    assert_not executive.save, 'Saved exec without title!'
+  end
+
   test 'should not save exec without title' do
     executive = Executive.new
+    executive.name = 'Harriet Tubman'
     executive.company_id = companies(:affectiva).id
     assert_not executive.save, 'Saved exec without title!'
   end
@@ -17,6 +25,7 @@ class ExecutiveTest < ActiveSupport::TestCase
 
   test 'save exec' do
     executive = Executive.new
+    executive.name = 'Harriet Tubman'
     executive.title = 'Chief Operating Officer'
     executive.company_id = companies(:affectiva).id
     assert executive.save, 'Failed to save exec'

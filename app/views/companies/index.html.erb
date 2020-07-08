@@ -65,7 +65,7 @@ function sortTable(column) {
       <td><%= company.rating_stats_html %> <%= company.exec_diverse_score_html(25) %></td>
       <td><%= company.ceo %></td>
       <td>
-        <% if ! company.ceo_total_comp.nil? %>
+        <% unless 0 === company.ceo_total_comp %>
           <%= number_to_currency(company.ceo_total_comp, precision: 0) %>
         <% end %>
       </td>

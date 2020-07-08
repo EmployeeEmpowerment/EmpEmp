@@ -30,6 +30,19 @@ class CompanyTest < ActiveSupport::TestCase
     assert company.save, 'Failed to save company with valid info!'
   end
 
+  test 'should save valid company w/o ISIN' do
+    company = Company.new
+    company.name = 'ABC Co.'
+    company.ceo = 'Lady Gaga'
+    company.ceo_annual_salary = 250_000
+    company.ceo_annual_bonus = 50_000
+    company.ceo_annual_sold_shares = 25_000
+    company.ceo_shares = 500_000
+    company.ceo_annual_stock_award = 12_500
+    company.stock_isin = ''
+    assert company.save, 'Failed to save company w/o ISIN!'
+  end
+
   test "shouldn't save negative ceo salary" do
     company = Company.new
     company.name = 'Valid Co.'
@@ -111,6 +124,11 @@ class CompanyTest < ActiveSupport::TestCase
   test 'Total comp for fixture is accurate' do
     company = companies(:facebook)
     assert_equal 1_800_000_001, company.ceo_total_comp, 'Total comp for fixture is incorrect!'
+  end
+
+  test 'Total comp default is 0' do
+    company = companies(:apple)
+    assert_equal 0, company.ceo_total_comp, 'Total comp for fixture is incorrect!'
   end
 
   test 'Total comp is accurate' do
