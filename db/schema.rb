@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_707_225_854) do
+ActiveRecord::Schema.define(version: 20_200_709_184_956) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20_200_707_225_854) do
     t.integer 'ceo_annual_salary'
     t.integer 'ceo_annual_bonus'
     t.integer 'ceo_shares'
-    t.integer 'ceo_annual_sold_shares'
+    t.bigint 'ceo_annual_sold_shares'
     t.integer 'ceo_annual_stock_award'
     t.string 'stock_isin'
   end
