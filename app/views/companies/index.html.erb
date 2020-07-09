@@ -8,43 +8,46 @@ function sortTable(column) {
     let switching = true;
     let dir = 'asc';
     let switchCount = 0;
-    let rows, i, x, y, shouldSwitch;
+    let rows, i, x, y, shouldSwitch, left, right;
 
     while (switching) {
-    switching = false;
-    rows = table.rows;
-  
-    for (i = 1; i < (rows.length - 1); i++) {
-      shouldSwitch = false;
-      x = rows[i].getElementsByTagName('TD')[column];
-      y = rows[i + 1].getElementsByTagName('TD')[column];
+        switching = false;
+        rows = table.rows;
 
-      if (dir === 'asc') {
-        if (x.innerText.toLowerCase() > y.innerText.toLowerCase()) {
-          shouldSwitch = true;
-          break;
+        for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            if (dir === 'asc') {
+                x = rows[i].getElementsByTagName('TD')[column];
+                y = rows[i + 1].getElementsByTagName('TD')[column];
+            } else if (dir === 'desc') {
+                y = rows[i].getElementsByTagName('TD')[column];
+                x = rows[i + 1].getElementsByTagName('TD')[column];
+            }
+
+            left = x.innerText.toLowerCase();
+            right = y.innerText.toLowerCase();
+            if (Number(left.replace(/[^0-9.-]+/g,""))) {
+                left = Number(left.replace(/[^0-9.-]+/g,""));
+                right = Number(right.replace(/[^0-9.-]+/g,""));
+            }
+
+            if (left > right) {
+                shouldSwitch = true;
+                break;
+            }
         }
-      }
-      else if (dir === 'desc') {
-        if (x.innerText.toLowerCase() < y.innerText.toLowerCase()) {
-          shouldSwitch = true;
-          break;
+
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchCount++;
+        } else {
+            if (switchCount === 0 && dir === 'asc') {
+                dir = 'desc';
+                switching = true;
+            }
         }
-      }
     }
-    
-    if (shouldSwitch) {
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
-      switchCount ++;
-    }
-    else {
-      if (switchCount === 0 && dir === 'asc') {
-        dir = 'desc';
-        switching = true;
-      }
-    }
-  }
 }
 </script>
 
@@ -54,9 +57,9 @@ function sortTable(column) {
     <th onclick='sortTable(0)' style='cursor:pointer'>Company</th>
     <th onclick='sortTable(1)' style='cursor:pointer'>Rating</th>
     <th onclick='sortTable(2)' style='cursor:pointer'>CEO: Name</th>
-    <th onclick='sortTable(2)' style='cursor:pointer'>Annual Comp</th>
-    <th onclick='sortTable(3)' style='cursor:pointer'>Gender</th>
-    <th onclick='sortTable(4)' style='cursor:pointer'>Race</th>
+    <th onclick='sortTable(3)' style='cursor:pointer'>Annual Comp</th>
+    <th onclick='sortTable(4)' style='cursor:pointer'>Gender</th>
+    <th onclick='sortTable(5)' style='cursor:pointer'>Race</th>
   </tr>
  
   <% @companies.sort_by(&:sort_value).reverse.each do |company| %>
@@ -64,7 +67,7 @@ function sortTable(column) {
       <td><%= link_to company.name, company_path(company) %></td>
       <td><%= company.rating_stats_html %> <%= company.exec_diverse_score_html(25) %></td>
       <td><%= company.ceo %></td>
-      <td>
+      <td align=right>
         <% unless 0 === company.ceo_total_comp %>
           <%= number_to_currency(company.ceo_total_comp, precision: 0) %>
         <% end %>
