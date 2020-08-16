@@ -14,10 +14,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   devise :omniauthable, omniauth_providers: [:linkedin]
 
-  validates :year_of_birth, numericality: { only_integer: true, allow_nil: true }
-  validates :year_of_birth, length: { maximum: 4 }
+  validate :valid_year_of_birth?
   validates :email, uniqueness: { case_sensitive: false },
                     format: { with: URI::MailTo::EMAIL_REGEXP }, unless: -> { from_omniauth? }
+  validates :agreed_to_tos, presence: true
 
   def self.from_omniauth(auth)
     existing_user = User.find_by email: auth.info.email
@@ -53,5 +53,12 @@ class User < ApplicationRecord
 
   def display
     "<img src='#{gravatar_url}'>"
+  end
+
+  def valid_year_of_birth?
+    return if year_of_birth.nil?
+    return if year_of_birth.empty?
+
+    errors.add('Year of birth', ' is invalid!') unless /^[12][0-9]{3}$/ =~ year_of_birth.to_s
   end
 end

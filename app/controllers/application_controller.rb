@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def sanitize_params(action)
     %i[name private year_of_birth gender race lgbtqia_plus immigrant expat has_disability
-       veteran].each do |k|
+       veteran unsubscribe_all agreed_to_tos].each do |k|
       devise_parameter_sanitizer.permit(action, keys: [k])
     end
   end
