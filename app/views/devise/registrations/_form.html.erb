@@ -40,3 +40,11 @@
   <%= f.label :year_of_birth %>
   <%= f.text_field :year_of_birth, size: 4, maxlength: 4 %>
 </div>
+<div class="field">
+  <%= f.label :unsubscribe_all, 'Unsubscribe from all email from EmpEmp.org?' %>
+  <%= f.check_box :unsubscribe_all %>
+</div>
+<div class="field">
+  You have fully read and agree with the <a href='/about/tos' target='_blank'>Terms of Service</a>?
+  <%= f.check_box :agreed_to_tos, required: true %>
+</div>

@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_709_184_956) do
+ActiveRecord::Schema.define(version: 20_200_816_010_114) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -97,6 +97,8 @@ ActiveRecord::Schema.define(version: 20_200_709_184_956) do
     t.boolean 'veteran'
     t.string 'provider'
     t.string 'uid'
+    t.boolean 'unsubscribe_all'
+    t.boolean 'agreed_to_tos'
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end

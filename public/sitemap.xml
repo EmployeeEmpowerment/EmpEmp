@@ -2,55 +2,67 @@
 <!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>http://www.empemp.org/</loc>
+    <loc>https://www.empemp.org/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies</loc>
+    <loc>https://www.empemp.org/companies</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/1</loc>
+    <loc>https://www.empemp.org/companies/1</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/2</loc>
+    <loc>https://www.empemp.org/companies/2</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/3</loc>
+    <loc>https://www.empemp.org/companies/3</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/4</loc>
+    <loc>https://www.empemp.org/companies/4</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/5</loc>
+    <loc>https://www.empemp.org/companies/5</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/6</loc>
+    <loc>https://www.empemp.org/companies/6</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/7</loc>
+    <loc>https://www.empemp.org/companies/7</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/8</loc>
+    <loc>https://www.empemp.org/companies/8</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/9</loc>
+    <loc>https://www.empemp.org/companies/9</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/10</loc>
+    <loc>https://www.empemp.org/companies/10</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://www.empemp.org/companies/11</loc>
+    <loc>https://www.empemp.org/companies/11</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.empemp.org/about/coc</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.empemp.org/about/privacy_policy</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.empemp.org/about/tos</loc>
     <changefreq>monthly</changefreq>
   </url>
 </urlset>
