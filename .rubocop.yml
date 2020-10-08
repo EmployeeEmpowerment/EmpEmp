@@ -2,6 +2,8 @@ require: rubocop-rails
 
 Metrics/AbcSize:
   Max: 20
+  Exclude:
+  - 'app/models/user.rb'
 
 Metrics/ClassLength:
   Exclude:
