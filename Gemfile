@@ -6,7 +6,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 # Gems for User:
-gem 'devise'
+# gem 'devise' VV needed until the branch is merged to Master
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'gravtastic'
 gem 'omniauth-linkedin-oauth2'
 
