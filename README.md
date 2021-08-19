@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/EmployeeEmpowerment/EmpEmp.svg?branch=master)](https://travis-ci.org/EmployeeEmpowerment/EmpEmp)
 
 Requirements:
-* Ruby version 2.7.0+
+* Ruby version 2.7.4+
 
 ## Getting started
 
