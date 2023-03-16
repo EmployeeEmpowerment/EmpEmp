@@ -1,3 +1,6 @@
+# Bye for now
+Due to lack of interest this project is being archived for now. If you are interested in reviving it you can either fork it or message @ForestJay .
+
 # Employee Empowerment SaaS App ( [EmpEmp.org](https://EmpEmp.org) )
 [![Build Status](https://travis-ci.org/EmployeeEmpowerment/EmpEmp.svg?branch=master)](https://travis-ci.org/EmployeeEmpowerment/EmpEmp)
 
